@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "BMDOHYEON";
+    src:url("/src/static/font/BMDOHYEON_ttf.ttf");
+}
+
+@font-face {
+    font-family: "BMJUA";
+    src:url("/src/static/font/BMJUA_ttf.ttf");
+}
+
+.fontBM_header{
+    font-family: BMDOHYEON;
+    font-size: 28px;
+}
+
+.fontBM_NavBar{
+    font-family: BMJUA;
+    font-size: 18px;
+}
+
+.textDecorationNone{
+    text-decoration: none;
+    color: black;
+}
+
+.w-full {
+    width:100%;
+}
+.background_white{
+    background-color: white;
+}
+
+.mg0{
+    margin: 0px;
+}
+
+.pd0{
+    padding:0px;
+}
+
+.pt40{
+    padding-top: 40px;
+}
+
+w-full{
+    width: 100%;
+}
+
+.listStyleNone{
+    list-style: none;
+    padding-left: 0px;
+}
