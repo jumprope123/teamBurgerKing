@@ -13,9 +13,10 @@ const App = () => {
 			<BrowserRouter>
 				<Header />
 				<Routes>
-					<Route path="/" element={<Brand />}></Route>
+					<Route path="/" element={<Menu />}></Route>
 					<Route path="/Menu" element={<Menu />}></Route>
           			<Route path="/Shop" element={<Shop />}></Route>
+					<Route path="/Brand" element={<Brand />}></Route>
 					{/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}
 					<Route path="*" element={<NotFound />}></Route>
 				</Routes>

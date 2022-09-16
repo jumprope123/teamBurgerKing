@@ -54,31 +54,31 @@ const Header = () => {
                         <div className={'col-2'}></div>
                         <div className={'col-2'} onMouseOver={ExtendsDiv}>
                             <ul className={'listStyleNone'}>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>스페셜&할인팩</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>신제품(NEW)</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>프리미엄</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>와퍼&주니어</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>치킨&슈림프버거</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>올데이킹</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>사이드</Link></li>
-                                <li><Link to="/Menu" className={'textDecorationNone'}>음료&디저트</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>스페셜&할인팩</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>신제품(NEW)</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>프리미엄</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>와퍼&주니어</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>치킨&슈림프버거</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>올데이킹</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>사이드</Link></li>
+                                <li><Link to="/Menu" className={'textDecorationNone'} onClick={CloseDiv}>음료&디저트</Link></li>
                             </ul>
                         </div>
                         <div className={'col-2'} onMouseOver={ExtendsDiv}>
                             <ul className={'listStyleNone'}>
-                                <li><Link to="/Shop" className={'textDecorationNone'}>매장찾기</Link></li>
+                                <li><Link to="/Shop" className={'textDecorationNone'} onClick={CloseDiv}>매장찾기</Link></li>
                             </ul>
                         </div>
                         <div className={'col-2'} onMouseOver={ExtendsDiv}>
                             <ul className={'listStyleNone'}>
-                                <li><Link to="/Event" className={'textDecorationNone'}>이벤트</Link></li>
+                                <li><Link to="/Event" className={'textDecorationNone'} onClick={CloseDiv}>이벤트</Link></li>
                             </ul>
                         </div>
                         <div className={'col-2'} onMouseOver={ExtendsDiv}>
                             <ul className={'listStyleNone'}>
-                                <li><Link to="/Brand" className={'textDecorationNone'}>BRAND</Link></li>
-                                <li><Link to="/Brand" className={'textDecorationNone'}>WHOPPER</Link></li>
-                                <li><Link to="/Brand" className={'textDecorationNone'}>COMM.</Link></li>
+                                <li><Link to="/Brand" className={'textDecorationNone'} onClick={CloseDiv}>BRAND</Link></li>
+                                <li><Link to="/Brand" className={'textDecorationNone'} onClick={CloseDiv}>WHOPPER</Link></li>
+                                <li><Link to="/Brand" className={'textDecorationNone'} onClick={CloseDiv}>COMM.</Link></li>
                             </ul>
                         </div>
                         <div className={'col-2'}></div>
