@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <React.Fragment>
-      <div className={"row background_footer w-full"}>
+      <div className={"row background_footer w-full min-w910"}>
         <div className={"col-2"}></div>
         <div className={"col-8"}>
           <div className={"mg0 min-w910 displayFlex fontBM_footer_small"}>
@@ -191,7 +191,7 @@ const Footer = () => {
         <div className={"col-2"}></div>
       </div>
 
-      <div className={"row background_footer w-full pt40 pb40"}>
+      <div className={"row background_footer w-full pt40 pb40 min-w910"}>
         <div className={"col-2 "}></div>
         <div className={"col-8 fontBM_footer_small"}>
           <div style={{ display: "inline-block" }}>
