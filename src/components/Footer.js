@@ -191,11 +191,59 @@ const Footer = () => {
         <div className={"col-2"}></div>
       </div>
 
-      <div className={"row background_footer w-full"}>
-        <div className={"col-2"}></div>
+      <div className={"row background_footer w-full pt40 pb40"}>
+        <div className={"col-2 "}></div>
         <div className={"col-8 fontBM_footer_small"}>
-          <div className={"fontBM_footer_big"}>BURGER KING</div>
-          <div style={{ float: "right" }}>d</div>
+          <div style={{ display: "inline-block" }}>
+            <div className={"fontBM_footer_big"}>BURGER KING</div>
+            <div className={"pt20"}>
+              서울 종로구 삼봉로 71 G 타워 2층 주식회사 비케이알 | 전화주문
+              1599-0505
+            </div>
+            <div>사업자 등록번호 101-86-76277 (주)BKR 대표이사 문영주</div>
+            <div className={"pb10"}>
+              Copyright 2019 BKR Co., Ltd. All right Reserved
+            </div>
+            <a href="https://ko-kr.facebook.com/" target={"_blank"}>
+              <img
+                src="/image/footer/facebook.png"
+                style={{ width: "30px", height: "30px" }}
+              />
+            </a>
+            <a href="https://www.instagram.com/" target={"_blank"}>
+              <img
+                src="/image/footer/instagram.png"
+                style={{ width: "30px", height: "30px" }}
+              />
+            </a>
+          </div>
+          <div style={{ float: "right", display: "inline-block" }}>
+            <p>이용약관 | 개인정보취급방침 | 법적고지</p>
+            <button
+              className={"background_footer"}
+              style={{
+                width: "100px",
+                borderRadius: "20px",
+                borderWidth: "1px",
+                borderColor: "white",
+                color: "white",
+              }}
+            >
+              인재채용
+            </button>
+            <button
+              className={"background_footer"}
+              style={{
+                width: "120px",
+                borderRadius: "20px",
+                borderWidth: "1px",
+                borderColor: "white",
+                color: "white",
+              }}
+            >
+              가맹점모집
+            </button>
+          </div>
         </div>
         <div className={"col-2"}></div>
       </div>
