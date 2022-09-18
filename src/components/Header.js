@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <div className={"row background_white w-full"}>
+      <div className={"row background_white w-full gx-0"}>
         <div className={"col-2"}></div>
         <div className={"col-8"}>
           <div className={"row mg0 min-w910"}>
@@ -74,7 +74,7 @@ const Header = () => {
         <div className={"col-2"}></div>
       </div>
       <div
-        className={"row background_white w-full fontBM_NavBar"}
+        className={"row background_white w-full fontBM_NavBar gx-0"}
         hidden={!extendsDiv}
         style={{ position: "absolute", zIndex: "9" }}
         onMouseLeave={CloseDiv}
