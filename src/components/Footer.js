@@ -13,7 +13,7 @@ const Footer = () => {
                 <li className={"fontBM_footer_big mgb20"}>메뉴</li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/SpecialDiscount"
                     className={"textDecorationNone color_footer"}
                   >
                     스페셜&할인팩
@@ -21,7 +21,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/NewProducts"
                     className={"textDecorationNone color_footer"}
                   >
                     신제품(NEW)
@@ -29,7 +29,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/Premium"
                     className={"textDecorationNone color_footer"}
                   >
                     프리미엄
@@ -37,7 +37,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/WhopperJunior"
                     className={"textDecorationNone color_footer"}
                   >
                     와퍼&주니어
@@ -45,7 +45,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/ChickenShrimp"
                     className={"textDecorationNone color_footer"}
                   >
                     치킨&슈림프버거
@@ -53,7 +53,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/AllDayKing"
                     className={"textDecorationNone color_footer"}
                   >
                     올데이킹
@@ -61,7 +61,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/SideMenu"
                     className={"textDecorationNone color_footer"}
                   >
                     사이드
@@ -69,7 +69,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/Menu"
+                    to="/BeverageDessert"
                     className={"textDecorationNone color_footer"}
                   >
                     음료&디저트

@@ -42,6 +42,13 @@
     color: black;
 }
 
+.colorWhite{
+    color: white;
+}
+.colorWhite:hover{
+    color: white;
+}
+
 .color_footer{
     color: #F5EBDC;
 }
