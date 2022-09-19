@@ -1,6 +1,6 @@
 import React from "react";
 
-const Menu = () => {
+const AllDayKing = () => {
   return (
     <div>
       <h1>메뉴소개</h1>
@@ -9,4 +9,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default AllDayKing;

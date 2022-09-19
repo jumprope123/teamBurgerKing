@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -87,7 +87,7 @@ const Header = () => {
               <ul className={"listStyleNone"}>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/SpecialDiscount"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -96,7 +96,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/NewProducts"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -105,7 +105,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/Premium"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -114,7 +114,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/WhopperJunior"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -123,7 +123,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/ChickenShrimp"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -132,7 +132,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/AllDayKing"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -141,7 +141,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/SideMenu"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -150,7 +150,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Menu"
+                    to="/BeverageDessert"
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
