@@ -17,6 +17,7 @@ import ChickenShrimp from "./pages/menu/ChickenShrimp";
 import AllDayKing from "./pages/menu/AllDayKing";
 import SideMenu from "./pages/menu/SideMenu";
 import BeverageDessert from "./pages/menu/BeverageDessert";
+import ShowDetail from "./pages/menu/specialDiscount/ShowDetail";
 const App = () => {
   /**
    *리덕스에서 state를 가지고 와서 보여주는 변수
@@ -54,6 +55,8 @@ const App = () => {
           <Route path="/AllDayKing" element={<AllDayKing />}></Route>
           <Route path="/SideMenu" element={<SideMenu />}></Route>
           <Route path="/BeverageDessert" element={<BeverageDessert />}></Route>
+          {/* 메뉴소개 각각의 페이지, 우선 ShowDetail */}
+          <Route path="/ShowDetail" element={<ShowDetail />}></Route>
 
           <Route path="/Shop" element={<Shop />}></Route>
           <Route path="/Brand" element={<Brand />}></Route>

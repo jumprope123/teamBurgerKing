@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { changeState } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import MenuNavBar from "../../components/main/menu/MenuNavBar";
+import { Link } from "react-router-dom";
 
 const SpecialDiscount = () => {
   /**
@@ -17,7 +18,7 @@ const SpecialDiscount = () => {
    * value값이 false선언시 클릭불가능한 text로 나타난다.
    */
   const [widthNavBarData, setWidthNavBarData] = useState({
-    HOME: "home",
+    HOME: "/home",
     메뉴소개: false,
   });
 
@@ -40,33 +41,61 @@ const SpecialDiscount = () => {
           <div className={"col-2"}></div>
           <div className={"col-8"}>
             <div className={"row fontBM_MenuName"}>
-              <div className={"col-3 textAlignCenter"}>
-                <img
-                  src="/image/main/menu/specialDiscount/goldencheesepack1.png"
-                  style={{ width: "180px", height: "150px" }}
-                />
-                <p className={"mgt10"}>골든치즈렐라 팩1</p>
+              <div className={"col-3 textAlignCenter mgt30"}>
+                <Link
+                  to="/showDetail"
+                  className={"textDecorationNone colorBlack"}
+                >
+                  <div>
+                    <img
+                      src="/image/main/menu/specialDiscount/goldencheesepack1.png"
+                      style={{ width: "180px", height: "150px" }}
+                    />
+                    <p className={"mgt10"}>골든치즈렐라 팩1</p>
+                  </div>
+                </Link>
               </div>
-              <div className={"col-3 textAlignCenter"}>
-                <img
-                  src="/image/main/menu/specialDiscount/goldencheesepack2.png"
-                  style={{ width: "180px", height: "150px" }}
-                />
-                <p className={"mgt10"}>골든치즈렐라 팩2</p>
+              <div className={"col-3 textAlignCenter mgt30"}>
+                <Link
+                  to="/showDetail"
+                  className={"textDecorationNone colorBlack"}
+                >
+                  <div>
+                    <img
+                      src="/image/main/menu/specialDiscount/goldencheesepack2.png"
+                      style={{ width: "180px", height: "150px" }}
+                    />
+                    <p className={"mgt10"}>골든치즈렐라 팩2</p>
+                  </div>
+                </Link>
               </div>
-              <div className={"col-3 textAlignCenter"}>
-                <img
-                  src="/image/main/menu/specialDiscount/goldencheesepack3.png"
-                  style={{ width: "180px", height: "150px" }}
-                />
-                <p className={"mgt10"}>골든치즈렐라 팩3</p>
+              <div className={"col-3 textAlignCenter mgt30"}>
+                <Link
+                  to="/showDetail"
+                  className={"textDecorationNone colorBlack"}
+                >
+                  <div>
+                    <img
+                      src="/image/main/menu/specialDiscount/goldencheesepack3.png"
+                      style={{ width: "180px", height: "150px" }}
+                    />
+                    <p className={"mgt10"}>골든치즈렐라 팩3</p>
+                  </div>
+                </Link>
               </div>
-              <div className={"col-3 textAlignCenter"}>
-                <img
-                  src="/image/main/menu/specialDiscount/goldencheesepack4.png"
-                  style={{ width: "180px", height: "150px" }}
-                />
-                <p className={"mgt10"}>골든치즈렐라 팩4</p>
+              <div className={"col-3 textAlignCenter mgt30"}>
+                <Link
+                  to="/showDetail"
+                  className={"textDecorationNone colorBlack"}
+                >
+                  <div>
+                    <img
+                      src="/image/main/menu/specialDiscount/goldencheesepack4.png"
+                      style={{ width: "180px", height: "150px" }}
+                    />
+                    <p className={"mgt10"}>골든치즈렐라 팩4</p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
