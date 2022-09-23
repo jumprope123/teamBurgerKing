@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { changeState } from "../../store/Store";
-import WidthNavBar from "../../components/WidthNavBar";
+import WidthNavBar from "../../components/main/menu/WidthNavBar";
 
 const NewProducts = () => {
   /**
