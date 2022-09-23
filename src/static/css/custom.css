@@ -30,6 +30,12 @@
     font-size: 50px;
 }
 
+.fontBM_MenuModal{
+    font-family: BMJUA;
+    font-weight: bold;
+    font-size: 35px;
+}
+
 .fontBM_MenuNavBar_small{
     font-family: BMJUA;
     font-size: 18px;
@@ -116,8 +122,22 @@
 .w-full {
     width:100%;
 }
+
+.h-full{
+    height: 100%;
+}
+
+.modalInnerDiv{
+    width: 660px;
+    height: 480px;
+}
+
 .background_white{
     background-color: white;
+}
+
+.background_whitePink{
+    background-color: #F2EBE6;
 }
 
 .background_footer{
@@ -159,6 +179,10 @@
 
 .mgb5{
     margin-bottom: 5px;
+}
+
+.mgb10{
+    margin-bottom: 10px !important;
 }
 
 .mgb20{
@@ -234,6 +258,10 @@ w-full{
     display: flex;
 }
 
+.displayBlock{
+    display: block;
+}
+
 .textAlignCenter{
  text-align: center;
 }
@@ -250,3 +278,14 @@ w-full{
     height: 88px;
 }
 
+.ft40{
+    font-size: 40px;
+}
+
+.overFlowYScroll{
+    overflow-y: auto;
+}
+
+.borderRadius15{
+    border-radius: 15px;
+}

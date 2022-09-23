@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { changeState } from "../../../store/Store";
@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 import { faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuCarousel from "../../../components/main/menu/MenuCarousel";
+import NutritionalContentsModal from "../../../components/main/menu/NutritionalContentsModal";
 
 const ShowDetail = () => {
+  const NutritionalContentsModalRef = useRef({});
+
   /**
    * 리덕스의 리듀서를 사용하기 위한 변수선언
    */
@@ -37,6 +40,7 @@ const ShowDetail = () => {
 
   return (
     <React.Fragment>
+      <NutritionalContentsModal ref={NutritionalContentsModalRef} />
       <WidthNavBar WidthNavBarData={widthNavBarData} />
       {/* 메인 이미지와 글자 크게 보여주는 란 - START*/}
       <div
@@ -86,6 +90,9 @@ const ShowDetail = () => {
                 id={"btn_background_menuDetail_under"}
                 name={"btn_background_menuDetail_under"}
                 style={{ borderRadius: "12px" }}
+                onClick={() => {
+                  NutritionalContentsModalRef.current.onOpen();
+                }}
               >
                 <div className={"fontBM_btn_menuDetail displayFlex"}>
                   <div>원산지, 영양성분, 알레르기 유발성분&nbsp;</div>
