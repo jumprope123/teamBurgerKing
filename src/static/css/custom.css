@@ -128,6 +128,11 @@
     background-color: #262222;
 }
 
+.background_menuDetail_anotherMenu{
+    background-color: #F2EBE6;
+}
+
+
 .mg0{
     margin: 0px;
 }
@@ -244,3 +249,4 @@ w-full{
 .height88{
     height: 88px;
 }
+

@@ -6,6 +6,7 @@ import WidthNavBar from "../../../components/main/menu/WidthNavBar";
 import { Link } from "react-router-dom";
 import { faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MenuCarousel from "../../../components/main/menu/MenuCarousel";
 
 const ShowDetail = () => {
   /**
@@ -115,6 +116,7 @@ const ShowDetail = () => {
           </span>
         </div>
       </div>
+      <MenuCarousel />
     </React.Fragment>
   );
 };
