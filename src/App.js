@@ -56,7 +56,11 @@ const App = () => {
           <Route path="/SideMenu" element={<SideMenu />}></Route>
           <Route path="/BeverageDessert" element={<BeverageDessert />}></Route>
           {/* 메뉴소개 각각의 페이지, 우선 ShowDetail */}
-          <Route path="/ShowDetail" element={<ShowDetail />}></Route>
+          <Route
+            key="ShowDetail"
+            path="/ShowDetail"
+            element={<ShowDetail />}
+          ></Route>
 
           <Route path="/Shop" element={<Shop />}></Route>
           <Route path="/Brand" element={<Brand />}></Route>

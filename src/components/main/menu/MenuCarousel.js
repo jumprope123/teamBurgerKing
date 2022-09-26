@@ -2,33 +2,26 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { changeShowDetailDataState } from "../../../store/Store";
 
 const MenuCarousel = (props) => {
   const [carouselItems, setCarouselItems] = useState();
 
+  /**
+   * 리덕스에서 carousel 값을 가져오기 위한 변수선언
+   */
+  let reduxMenuCarouselData = useSelector((state) => {
+    return state;
+  });
+
+  /**
+   * 리덕스의 리듀서를 사용하기 위한 변수선언
+   */
+  let dispatch = useDispatch();
+
   useEffect(() => {
-    let items = [
-      {
-        linkTo: "/showDetail",
-        imageSrc: "/image/main/menu/specialDiscount/goldencheesepack1.png",
-        imageNM: "골든치즈렐라 팩1",
-      },
-      {
-        linkTo: "/showDetail",
-        imageSrc: "/image/main/menu/specialDiscount/goldencheesepack2.png",
-        imageNM: "골든치즈렐라 팩2",
-      },
-      {
-        linkTo: "/showDetail",
-        imageSrc: "/image/main/menu/specialDiscount/goldencheesepack3.png",
-        imageNM: "골든치즈렐라 팩3",
-      },
-      {
-        linkTo: "/showDetail",
-        imageSrc: "/image/main/menu/specialDiscount/goldencheesepack4.png",
-        imageNM: "골든치즈렐라 팩4",
-      },
-    ];
+    let items = reduxMenuCarouselData.menuCarouselData;
     setCarouselItems(makeCarouselData(items));
   }, []);
 
@@ -55,7 +48,6 @@ const MenuCarousel = (props) => {
         );
       }
     }
-    console.log(data);
     return data;
   }
 
@@ -72,6 +64,9 @@ const MenuCarousel = (props) => {
           <Link
             to={items[j].linkTo}
             className={"textDecorationNone colorBlack"}
+            onClick={() => {
+              dispatch(changeShowDetailDataState(items[j]));
+            }}
           >
             <div>
               <img
@@ -84,7 +79,6 @@ const MenuCarousel = (props) => {
         </div>
       );
     }
-    console.log(data);
     return data;
   }
 
