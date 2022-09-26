@@ -29,6 +29,14 @@ const ShowDetail = () => {
   );
 
   /**
+   * 스크롤 맨 처음으로 이동 + 리덕스 변경시 내용 변경기능 추가
+   */
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setShowDetailData(reduxShowDetailData.showDetailData);
+  }, [reduxShowDetailData]);
+
+  /**
    * 페이지별 가로네비게이션을 선언하기 위한 Hooks
    * key값이 보여지는값, value값이 클릭시 이동할 Link주소
    * value값이 false선언시 클릭불가능한 text로 나타난다.

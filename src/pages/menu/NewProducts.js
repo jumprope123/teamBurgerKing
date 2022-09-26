@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { changeShowDetailDataState, changeState } from "../../store/Store";
+import {
+  changeMenuCarouselData,
+  changeShowDetailDataState,
+  changeState,
+} from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import MenuNavBar from "../../components/main/menu/MenuNavBar";
 import { Link } from "react-router-dom";
@@ -28,6 +32,35 @@ const NewProducts = () => {
    */
   useEffect(() => {
     dispatch(changeState(true));
+    dispatch(
+      changeMenuCarouselData([
+        {
+          linkTo: "/showDetail",
+          imageSrc: "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+          imageNM: "골든치즈렐라와퍼",
+        },
+        {
+          linkTo: "/showDetail",
+          imageSrc: "/image/main/menu/newProducts/goldencheeselellaChicken.png",
+          imageNM: "골든치즈렐라치킨버거",
+        },
+        {
+          linkTo: "/showDetail",
+          imageSrc: "/image/main/menu/newProducts/tabascoMonster.png",
+          imageNM: "타바스코몬스터",
+        },
+        {
+          linkTo: "/showDetail",
+          imageSrc: "/image/main/menu/newProducts/tabascoDoubleBeef.png",
+          imageNM: "타바스코더블비프",
+        },
+        {
+          linkTo: "/showDetail",
+          imageSrc: "/image/main/menu/newProducts/tabascoShrimp.png",
+          imageNM: "타바스코슈림프",
+        },
+      ])
+    );
   }, []);
 
   return (
@@ -53,10 +86,21 @@ const NewProducts = () => {
                         detail: [
                           {
                             imageURL:
-                              "/image/main/menu/specialDiscount/goldencheesepack4.png",
-                            title: "골든치즈렐라 팩4",
-                            description:
-                              "골든치즈렐라와퍼+골든치즈렐라치킨버거+크리미모짜볼5조각+너겟킹4조각+콜라R2",
+                              "/image/main/menu/newProducts/goldencheeselellaWhopperLargeSet.png",
+                            title: "골든치즈렐라와퍼라지세트",
+                            description: "골든치즈렐라와퍼+프렌치프라이L+콜라L",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/goldencheeselellaWhopperSet.png",
+                            title: "골든치즈렐라와퍼세트",
+                            description: "골든치즈렐라와퍼+프렌치프라이R+콜라R",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+                            title: "골든치즈렐라와퍼",
+                            description: "단품",
                           },
                         ],
                         returnLink: "/NewProducts",
