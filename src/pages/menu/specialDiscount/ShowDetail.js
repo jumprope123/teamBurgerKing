@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeState } from "../../../store/Store";
 import WidthNavBar from "../../../components/main/menu/WidthNavBar";
 import { Link } from "react-router-dom";
@@ -16,6 +16,17 @@ const ShowDetail = () => {
    * 리덕스의 리듀서를 사용하기 위한 변수선언
    */
   let dispatch = useDispatch();
+
+  /**
+   * 서비스없이 UI만 있을때 showDetail의 데이터를 보여주기 위한 리덕스 state
+   */
+  let reduxShowDetailData = useSelector((state) => {
+    return state;
+  });
+
+  const [ShowDetailData, setShowDetailData] = useState(
+    reduxShowDetailData.showDetailData
+  );
 
   /**
    * 페이지별 가로네비게이션을 선언하기 위한 Hooks
@@ -36,7 +47,77 @@ const ShowDetail = () => {
    */
   useEffect(() => {
     dispatch(changeState(true));
+    setShowDetailData(reduxShowDetailData.showDetailData);
+    makeDetailDiv();
   }, []);
+
+  /**
+   * 리덕스로부터 보여줄 데이터값을 받아와서 그대로 보여주는 함수
+   */
+  function makeDetailDiv() {
+    let repeatCnt = reduxShowDetailData.showDetailData.detail.length;
+    let repeatData = reduxShowDetailData.showDetailData.detail;
+    let data = [];
+    switch (repeatCnt) {
+      case 1:
+        repeatData.map((item) => {
+          data.push(
+            <div className={"col-12"}>
+              <img
+                src={item.imageURL}
+                style={{ width: "258px", height: "194px" }}
+              />
+              <p className={"fontBM_detail_menuOne_big mgt30"}>{item.title}</p>
+              <span className={"fontBM_menuDetail"}>{item.description}</span>
+            </div>
+          );
+        });
+        break;
+      case 2:
+        repeatData.map((item) => {
+          data.push(
+            <div className={"col-6"}>
+              <img
+                src={item.imageURL}
+                style={{ width: "258px", height: "194px" }}
+              />
+              <p className={"fontBM_detail_menuOne_big mgt30"}>{item.title}</p>
+              <span className={"fontBM_menuDetail"}>{item.description}</span>
+            </div>
+          );
+        });
+        break;
+      case 3:
+        repeatData.map((item) => {
+          data.push(
+            <div className={"col-4"}>
+              <img
+                src={item.imageURL}
+                style={{ width: "258px", height: "194px" }}
+              />
+              <p className={"fontBM_detail_menuOne_big mgt30"}>{item.title}</p>
+              <span className={"fontBM_menuDetail"}>{item.description}</span>
+            </div>
+          );
+        });
+        break;
+      default:
+        repeatData.map((item) => {
+          data.push(
+            <div className={"col-3"}>
+              <img
+                src={item.imageURL}
+                style={{ width: "258px", height: "194px" }}
+              />
+              <p className={"fontBM_detail_menuOne_big mgt30"}>{item.title}</p>
+              <span className={"fontBM_menuDetail"}>{item.description}</span>
+            </div>
+          );
+        });
+        break;
+    }
+    return data;
+  }
 
   return (
     <React.Fragment>
@@ -52,13 +133,11 @@ const ShowDetail = () => {
         <div className={"col-8"}>
           <div className={"row alignItemsCenter"}>
             <div className={"col-6 text-white fontBM_MenuDetailBig"}>
-              골든치즈렐라 팩1
+              {ShowDetailData.title}
             </div>
             <div className={"col-6"}>
               <img
-                src={
-                  "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png"
-                }
+                src={ShowDetailData.imageURL}
                 style={{ width: "440px", height: "330px" }}
               />
             </div>
@@ -78,7 +157,7 @@ const ShowDetail = () => {
           <div className={"row alignItemsCenter"}>
             <div className={"col-6"}>
               <Link
-                to="/SpecialDiscount"
+                to={ShowDetailData.returnLink}
                 className={"textDecorationNone colorWhite fontBM_menuDetail"}
               >
                 <span>{"<"}&nbsp;&nbsp;메뉴 목록으로 돌아가기</span>
@@ -110,19 +189,12 @@ const ShowDetail = () => {
       {/*  메뉴목록으로 돌아가기, 원산지,영양성분,알레르기 유발성분 - END*/}
       {/*  메뉴 디테일 메인 페이지*/}
       <div className={"row w-full min-w910 gx-0"}>
-        <div className={"col-12 textAlignCenter mgt100 mgb100"}>
-          <img
-            src={
-              "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png"
-            }
-            style={{ width: "258px", height: "194px" }}
-          />
-          <p className={"fontBM_detail_menuOne_big mgt30"}>골든치즈렐라 팩1</p>
-          <span className={"fontBM_menuDetail"}>
-            골든치즈렐라와퍼+골든치즈렐라치킨버거+크리미모짜볼5조각+너겟킹4조각+콜라R2
-          </span>
+        <div className={"col-2 textAlignCenter mgt100 mgb100"}></div>
+        <div className={"col-8 textAlignCenter mgt100 mgb100"}>
+          <div className={"row"}>{makeDetailDiv()}</div>
         </div>
       </div>
+      <div className={"col-2 textAlignCenter mgt100 mgb100"}></div>
       <MenuCarousel />
     </React.Fragment>
   );

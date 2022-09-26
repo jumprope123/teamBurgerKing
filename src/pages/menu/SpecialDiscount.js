@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
-import { changeState } from "../../store/Store";
+import { changeShowDetailDataState, changeState } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import MenuNavBar from "../../components/main/menu/MenuNavBar";
 import { Link } from "react-router-dom";
@@ -45,6 +45,25 @@ const SpecialDiscount = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "골든치즈렐라 팩1",
+                        imageURL:
+                          "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png",
+                            title: "골든치즈렐라 팩1",
+                            description:
+                              "골든치즈렐라와퍼+골든치즈렐라치킨버거+크리미모짜볼5조각+너겟킹4조각+콜라R2",
+                          },
+                        ],
+                        returnLink: "/SpecialDiscount",
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
@@ -59,6 +78,26 @@ const SpecialDiscount = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "골든치즈렐라 팩2",
+                        imageURL:
+                          "/image/main/menu/specialDiscount/goldencheesepack2.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/specialDiscount/goldencheesepack2.png",
+                            title: "골든치즈렐라 팩2",
+                            description:
+                              "골든치즈렐라와퍼+치즈와퍼+ 크리미모짜볼5조각+너겟킹4조각+콜라R2",
+                          },
+                        ],
+
+                        returnLink: "/SpecialDiscount",
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
@@ -73,6 +112,25 @@ const SpecialDiscount = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "골든치즈렐라 팩3",
+                        imageURL:
+                          "/image/main/menu/specialDiscount/goldencheesepack3.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/specialDiscount/goldencheesepack3.png",
+                            title: "골든치즈렐라 팩3",
+                            description:
+                              "골든치즈렐라와퍼+갈릭불고기와퍼+ 크리미모짜볼5조각+너겟킹4조각+콜라R2",
+                          },
+                        ],
+                        returnLink: "/SpecialDiscount",
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
@@ -87,6 +145,26 @@ const SpecialDiscount = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "골든치즈렐라 팩4",
+                        imageURL:
+                          "/image/main/menu/specialDiscount/goldencheesepack4.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/specialDiscount/goldencheesepack4.png",
+                            title: "골든치즈렐라 팩4",
+                            description:
+                              "골든치즈렐라치킨버거+콰트로치즈와퍼+ 크리미모짜볼5조각+너겟킹4조각+콜라R2",
+                          },
+                        ],
+
+                        returnLink: "/SpecialDiscount",
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
