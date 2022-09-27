@@ -38,6 +38,7 @@ const ChickenShrimp = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/chickenShrimp/beefShrimp.png",
+          linkNM: "치킨&슈림프버거",
           title: "비프&슈림프버거",
           description: "불맛가득 순쇠고기 패티에 새콤달콤 루피 특제소스 듬뿍!",
           imageURL: "/image/main/menu/chickenShrimp/beefShrimp.png",
@@ -63,6 +64,7 @@ const ChickenShrimp = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/chickenShrimp/shrimpShrimp.png",
+          linkNM: "치킨&슈림프버거",
           title: "통새우슈림프버거",
           description:
             "통통한 통새우에 새콤달콤 루피 특제소스 듬뿍! 통새우 슈림프 버거",
@@ -90,6 +92,7 @@ const ChickenShrimp = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/chickenShrimp/rupiShrimp.png",
+          linkNM: "치킨&슈림프버거",
           title: "잔망루피슈림프버거",
           description: "탱글한 새우패티에 새콤달콤 루피 특제소스 듬뿍!",
           imageURL: "/image/main/menu/chickenShrimp/rupiShrimp.png",
@@ -115,6 +118,7 @@ const ChickenShrimp = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/chickenShrimp/longChicken.png",
+          linkNM: "치킨&슈림프버거",
           title: "롱치킨버거",
           description:
             "담백한 치킨 패티에 부드러운 마요네즈 소스와 싱싱한 야채가 듬뿍~",
@@ -142,6 +146,7 @@ const ChickenShrimp = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/chickenShrimp/babequKingChicken.png",
+          linkNM: "치킨&슈림프버거",
           title: "바베큐킹치킨버거",
           description: "진한 바비큐 소스가 가득!",
           imageURL: "/image/main/menu/chickenShrimp/babequKingChicken.png",
@@ -169,6 +174,7 @@ const ChickenShrimp = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/chickenShrimp/kingChicken.png",
+          linkNM: "치킨&슈림프버거",
           title: "킹치킨버거",
           description:
             "부드러운 에그번과 킹치킨패티의 만남! 풍부한 마요 소스로 고소하게!",
@@ -214,6 +220,7 @@ const ChickenShrimp = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "치킨&슈림프버거",
                         title: "비프&슈림프버거",
                         description:
                           "불맛가득 순쇠고기 패티에 새콤달콤 루피 특제소스 듬뿍!",
@@ -267,6 +274,7 @@ const ChickenShrimp = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "치킨&슈림프버거",
                         title: "통새우슈림프버거",
                         description:
                           "통통한 통새우에 새콤달콤 루피 특제소스 듬뿍! 통새우 슈림프 버거",
@@ -320,6 +328,7 @@ const ChickenShrimp = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "치킨&슈림프버거",
                         title: "잔망루피슈림프버거",
                         description:
                           "탱글한 새우패티에 새콤달콤 루피 특제소스 듬뿍!",
@@ -375,6 +384,7 @@ const ChickenShrimp = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "치킨&슈림프버거",
                         title: "롱치킨버거",
                         description:
                           "담백한 치킨 패티에 부드러운 마요네즈 소스와 싱싱한 야채가 듬뿍~",
@@ -428,6 +438,7 @@ const ChickenShrimp = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "치킨&슈림프버거",
                         title: "바베큐킹치킨버거",
                         description: "진한 바비큐 소스가 가득!",
                         imageURL:
@@ -480,6 +491,7 @@ const ChickenShrimp = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "치킨&슈림프버거",
                         title: "킹치킨버거",
                         description:
                           "부드러운 에그번과 킹치킨패티의 만남! 풍부한 마요 소스로 고소하게!",

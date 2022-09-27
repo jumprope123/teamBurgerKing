@@ -40,6 +40,7 @@ const SpecialDiscount = () => {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack1.png",
           // imageNM: "골든치즈렐라 팩1",
+          linkNM: "스페셜&할인팩",
           title: "골든치즈렐라 팩1",
           description: "",
           imageURL:
@@ -59,6 +60,7 @@ const SpecialDiscount = () => {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack2.png",
           // imageNM: "골든치즈렐라 팩2",
+          linkNM: "스페셜&할인팩",
           title: "골든치즈렐라 팩2",
           description: "",
           imageURL: "/image/main/menu/specialDiscount/goldencheesepack2.png",
@@ -78,6 +80,7 @@ const SpecialDiscount = () => {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack3.png",
           // imageNM: "골든치즈렐라 팩3",
+          linkNM: "스페셜&할인팩",
           title: "골든치즈렐라 팩3",
           description: "",
           imageURL: "/image/main/menu/specialDiscount/goldencheesepack3.png",
@@ -96,6 +99,7 @@ const SpecialDiscount = () => {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack4.png",
           // imageNM: "골든치즈렐라 팩4",
+          linkNM: "스페셜&할인팩",
           title: "골든치즈렐라 팩4",
           description: "",
           imageURL: "/image/main/menu/specialDiscount/goldencheesepack4.png",
@@ -132,6 +136,7 @@ const SpecialDiscount = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "스페셜&할인팩",
                         title: "골든치즈렐라 팩1",
                         description: "",
                         imageURL:
@@ -173,6 +178,7 @@ const SpecialDiscount = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "스페셜&할인팩",
                         title: "골든치즈렐라 팩2",
                         description: "",
                         imageURL:
@@ -214,6 +220,7 @@ const SpecialDiscount = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "스페셜&할인팩",
                         title: "골든치즈렐라 팩3",
                         description: "",
                         imageURL:
@@ -255,6 +262,7 @@ const SpecialDiscount = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "스페셜&할인팩",
                         title: "골든치즈렐라 팩4",
                         description: "",
                         imageURL:

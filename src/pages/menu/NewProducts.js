@@ -39,6 +39,7 @@ const NewProducts = () => {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
           // imageNM: "골든치즈렐라와퍼",
+          linkNM: "신제품(NEW)",
           title: "골든치즈렐라와퍼",
           description:
             "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
@@ -69,6 +70,7 @@ const NewProducts = () => {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/goldencheeselellaChicken.png",
           // imageNM: "골든치즈렐라치킨버거",
+          linkNM: "신제품(NEW)",
           title: "골든치즈렐라치킨버거",
           description:
             "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
@@ -99,6 +101,7 @@ const NewProducts = () => {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/tabascoMonster.png",
           // imageNM: "타바스코몬스터",
+          linkNM: "신제품(NEW)",
           title: "타바스코몬스터",
           description:
             "화끈한 타바스코에 직화구이 순쇠고기, 그리고 바삭한 치킨패티까지! 타바스코 몬스터",
@@ -127,6 +130,7 @@ const NewProducts = () => {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/tabascoDoubleBeef.png",
           // imageNM: "타바스코더블비프",
+          linkNM: "신제품(NEW)",
           title: "타바스코더블비프",
           description:
             "시그니처 불맛가득 순쇠고기 패티의 풍부한 풍미! 타바스코 더블비프",
@@ -155,6 +159,7 @@ const NewProducts = () => {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/tabascoShrimp.png",
           // imageNM: "타바스코슈림프",
+          linkNM: "신제품(NEW)",
           title: "타바스코슈림프",
           description:
             "화끈한 타바스코에 탱글한 새우패티까지 더해졌다! 타바스코 슈림프",
@@ -200,6 +205,7 @@ const NewProducts = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "신제품(NEW)",
                         title: "골든치즈렐라와퍼",
                         description:
                           "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
@@ -253,6 +259,7 @@ const NewProducts = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "신제품(NEW)",
                         title: "골든치즈렐라치킨버거",
                         description:
                           "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
@@ -308,6 +315,7 @@ const NewProducts = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "신제품(NEW)",
                         title: "타바스코몬스터",
                         description: `화끈한 타바스코에 직화구이 순쇠고기, 그리고 바삭한 치킨패티까지! 타바스코 몬스터`,
                         imageURL:
@@ -362,6 +370,7 @@ const NewProducts = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "신제품(NEW)",
                         title: "타바스코더블비프",
                         description:
                           "시그니처 불맛가득 순쇠고기 패티의 풍부한 풍미! 타바스코 더블비프",
@@ -417,6 +426,7 @@ const NewProducts = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "신제품(NEW)",
                         title: "타바스코슈림프",
                         description:
                           "화끈한 타바스코에 탱글한 새우패티까지 더해졌다! 타바스코 슈림프",
