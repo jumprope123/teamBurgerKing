@@ -61,7 +61,7 @@ const Premium = () => {
               description: "단품",
             },
           ],
-          returnLink: "/premium",
+          returnLink: "/Premium",
         },
         {
           linkTo: "/showDetail",
