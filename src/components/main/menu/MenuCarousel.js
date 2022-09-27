@@ -7,6 +7,7 @@ import { changeShowDetailDataState } from "../../../store/Store";
 
 const MenuCarousel = (props) => {
   const [carouselItems, setCarouselItems] = useState();
+  const [linkNM, setLinkNM] = useState();
 
   /**
    * 리덕스에서 carousel 값을 가져오기 위한 변수선언
@@ -22,6 +23,7 @@ const MenuCarousel = (props) => {
 
   useEffect(() => {
     let items = reduxMenuCarouselData.menuCarouselData;
+    setLinkNM(items[0]["linkNM"]);
     setCarouselItems(makeCarouselData(items));
   }, []);
 
@@ -92,7 +94,7 @@ const MenuCarousel = (props) => {
       <div className={"col-8"}>
         <div className={"row"}>
           <div className={"fontBM_detail_menuOne_big textAlignCenter min-w910"}>
-            스페셜&할인팩의 다른 메뉴
+            {linkNM}의 다른 메뉴
           </div>
           <div className={"col-12 min-w910"}>
             <Carousel autoPlay={false} animation={"slide"}>

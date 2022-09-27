@@ -38,6 +38,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/guinnessQuattroCheeseWhopper.png",
+          linkNM: "프리미엄",
           title: "기네스콰트로치즈와퍼",
           description: "콰트로치즈와퍼가 기네스를 만나다!",
           imageURL: "/image/main/menu/premium/guinnessQuattroCheeseWhopper.png",
@@ -66,6 +67,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/guinnessMushroomWhopper.png",
+          linkNM: "프리미엄",
           title: "기네스머쉬룸와퍼",
           description: "기네스 번과 기네스 바비큐 소스의 풍미!",
           imageURL: "/image/main/menu/premium/guinnessMushroomWhopper.png",
@@ -93,6 +95,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/guinnessWhopper.png",
+          linkNM: "프리미엄",
           title: "기네스와퍼",
           description: "기네스 번과 기네스 바비큐 소스의 풍미!",
           imageURL: "/image/main/menu/premium/guinnessWhopper.png",
@@ -118,6 +121,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/monsterWhopper.png",
+          linkNM: "프리미엄",
           title: "몬스터와퍼",
           description:
             "불맛 가득 순쇠고기, 치킨, 베이컨에 화끈한 디아블로 소스의 압도적인 맛",
@@ -144,6 +148,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/monsterX.png",
+          linkNM: "프리미엄",
           title: "몬스터X",
           description:
             "부드러운 호밀 브리오슈 번, 두툼한 스테이크 패티, 디아블로 소스의 압도적인 맛",
@@ -170,6 +175,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/quattroCheeseWhopper.png",
+          linkNM: "프리미엄",
           title: "콰트로치즈와퍼",
           description:
             "진짜 불맛을 즐겨라, 4가지 고품격 치즈와 불에 직접 구운 와퍼 패티의 만남!",
@@ -197,6 +203,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/quattroCheeseX.png",
+          linkNM: "프리미엄",
           title: "콰트로치즈X",
           description:
             "진짜 불맛을 즐겨라, 고품격 치즈와 불에 직접 구운 스테이크 패티의 만남!",
@@ -223,6 +230,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/shrimpWhopper.png",
+          linkNM: "프리미엄",
           title: "통새우와퍼",
           description:
             "불맛 가득 순쇠고기, 갈릭페퍼 통새우, 스파이시토마토소스가 더해진 프리미엄 버거",
@@ -249,6 +257,7 @@ const Premium = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/premium/shrimpX.png",
+          linkNM: "프리미엄",
           title: "통새우X",
           description:
             "갈릭페퍼 통새우, 스파이시토마토소스가 더해진 프리미엄 버거",
@@ -293,6 +302,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "기네스콰트로치즈와퍼",
                         description: "콰트로치즈와퍼가 기네스를 만나다!",
                         imageURL:
@@ -347,6 +357,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "기네스머쉬룸와퍼",
                         description: "기네스 번과 기네스 바비큐 소스의 풍미!",
                         imageURL:
@@ -399,6 +410,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "기네스와퍼",
                         description: "기네스 번과 기네스 바비큐 소스의 풍미!",
                         imageURL:
@@ -451,6 +463,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "몬스터와퍼",
                         description:
                           "불맛 가득 순쇠고기, 치킨, 베이컨에 화끈한 디아블로 소스의 압도적인 맛",
@@ -503,6 +516,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "몬스터X",
                         description:
                           "부드러운 호밀 브리오슈 번, 두툼한 스테이크 패티, 디아블로 소스의 압도적인 맛",
@@ -554,6 +568,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "콰트로치즈와퍼",
                         description:
                           "진짜 불맛을 즐겨라, 4가지 고품격 치즈와 불에 직접 구운 와퍼 패티의 만남!",
@@ -607,6 +622,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "콰트로치즈X",
                         description:
                           "진짜 불맛을 즐겨라, 고품격 치즈와 불에 직접 구운 스테이크 패티의 만남!",
@@ -660,6 +676,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "통새우와퍼",
                         description:
                           "불맛 가득 순쇠고기, 갈릭페퍼 통새우, 스파이시토마토소스가 더해진 프리미엄 버거",
@@ -712,6 +729,7 @@ const Premium = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "프리미엄",
                         title: "통새우X",
                         description:
                           "갈릭페퍼 통새우, 스파이시토마토소스가 더해진 프리미엄 버거",

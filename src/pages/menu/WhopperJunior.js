@@ -38,6 +38,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/whopper.png",
+          linkNM: "와퍼&주니어",
           title: "와퍼",
           description:
             "불에 직접 구운 순 쇠고기 패티에 싱싱한 야채가 한가득~ 버거킹의 대표 메뉴!",
@@ -64,6 +65,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/cheeseWhopper.png",
+          linkNM: "와퍼&주니어",
           title: "치즈와퍼",
           description:
             "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼에 고소한 치즈까지!",
@@ -91,6 +93,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/bulgogiWhopper.png",
+          linkNM: "와퍼&주니어",
           title: "불고기와퍼",
           description:
             "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!",
@@ -118,6 +121,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/stacker2Whopper.png",
+          linkNM: "와퍼&주니어",
           title: "스태커2와퍼",
           description: "믿고 먹을수 있는 와퍼, 더 크게 도전하세요!",
           imageURL: "/image/main/menu/whopperJunior/stacker2Whopper.png",
@@ -144,6 +148,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/stacker3Whopper.png",
+          linkNM: "와퍼&주니어",
           title: "스태커3와퍼",
           description: "믿고 먹을수 있는 와퍼, 더 크게 도전하세요!",
           imageURL: "/image/main/menu/whopperJunior/stacker3Whopper.png",
@@ -170,6 +175,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/galicBulgogiWhopper.png",
+          linkNM: "와퍼&주니어",
           title: "갈릭불고기와퍼",
           description: "",
           imageURL: "/image/main/menu/whopperJunior/galicBulgogiWhopper.png",
@@ -198,6 +204,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/baconCheeseWhopper.png",
+          linkNM: "와퍼&주니어",
           title: "베이컨치즈와퍼",
           description: "풍미 가득한 아메리칸 클래식의 완벽한 조화!",
           imageURL: "/image/main/menu/whopperJunior/baconCheeseWhopper.png",
@@ -225,6 +232,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/jalapenoWhopper.png",
+          linkNM: "와퍼&주니어",
           title: "할리피뇨와퍼",
           description: "",
           imageURL: "/image/main/menu/whopperJunior/jalapenoWhopper.png",
@@ -251,6 +259,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/shrimpWhopperJunior.png",
+          linkNM: "와퍼&주니어",
           title: "통새우와퍼주니어",
           description:
             "불맛 가득 순쇠고기, 갈릭페퍼 통새우, 스파이시토마토소스가 더해진 프리미엄 버거",
@@ -281,6 +290,7 @@ const WhopperJunior = () => {
           linkTo: "/showDetail",
           imageSrc:
             "/image/main/menu/whopperJunior/quattroCheeseWhopperJunior.png",
+          linkNM: "와퍼&주니어",
           title: "콰트로치즈와퍼주니어",
           description:
             "진짜 불맛을 즐겨라, 4가지 고품격 치즈와 불에 직접 구운 와퍼 패티의 만남!",
@@ -311,6 +321,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/cheeseWhopperJunior.png",
+          linkNM: "와퍼&주니어",
           title: "치즈와퍼주니어",
           description:
             "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼주니어에 고소한 치즈 추가!",
@@ -340,6 +351,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/whopperJunior.png",
+          linkNM: "와퍼&주니어",
           title: "와퍼주니어",
           description:
             "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼의 주니어 버전~ 작지만 꽉 찼다!",
@@ -367,6 +379,7 @@ const WhopperJunior = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/whopperJunior/bulgogiWhopperJunior.png",
+          linkNM: "와퍼&주니어",
           title: "불고기와퍼주니어",
           description:
             "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼주니어에 달콤한 불고기 소스까지!",
@@ -414,6 +427,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "와퍼",
                         description:
                           "불에 직접 구운 순 쇠고기 패티에 싱싱한 야채가 한가득~ 버거킹의 대표 메뉴!",
@@ -466,6 +480,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "치즈와퍼",
                         description:
                           "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼에 고소한 치즈까지!",
@@ -519,6 +534,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "불고기와퍼",
                         description:
                           "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!",
@@ -572,6 +588,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "스태커2와퍼",
                         description:
                           "믿고 먹을수 있는 와퍼, 더 크게 도전하세요!",
@@ -625,6 +642,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "스태커3와퍼",
                         description:
                           "믿고 먹을수 있는 와퍼, 더 크게 도전하세요!",
@@ -678,6 +696,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "갈릭불고기와퍼",
                         description: "",
                         imageURL:
@@ -730,6 +749,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "베이컨치즈와퍼",
                         description:
                           "풍미 가득한 아메리칸 클래식의 완벽한 조화!",
@@ -783,6 +803,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "할리피뇨와퍼",
                         description: "",
                         imageURL:
@@ -835,6 +856,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "통새우와퍼주니어",
                         description:
                           "불맛 가득 순쇠고기, 갈릭페퍼 통새우, 스파이시토마토소스가 더해진 프리미엄 버거",
@@ -888,6 +910,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "콰트로치즈와퍼주니어",
                         description:
                           "진짜 불맛을 즐겨라, 4가지 고품격 치즈와 불에 직접 구운 와퍼 패티의 만남!",
@@ -943,6 +966,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "치즈와퍼주니어",
                         description:
                           "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼주니어에 고소한 치즈 추가!",
@@ -996,6 +1020,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "와퍼주니어",
                         description:
                           "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼의 주니어 버전~ 작지만 꽉 찼다!",
@@ -1049,6 +1074,7 @@ const WhopperJunior = () => {
                   onClick={() => {
                     dispatch(
                       changeShowDetailDataState({
+                        linkNM: "와퍼&주니어",
                         title: "불고기와퍼주니어",
                         description:
                           "불에 직접 구운 순 쇠고기 패티가 들어간 와퍼주니어에 달콤한 불고기 소스까지!",
