@@ -17,7 +17,7 @@ import ChickenShrimp from "./pages/menu/ChickenShrimp";
 import AllDayKing from "./pages/menu/AllDayKing";
 import SideMenu from "./pages/menu/SideMenu";
 import BeverageDessert from "./pages/menu/BeverageDessert";
-import ShowDetail from "./pages/menu/specialDiscount/ShowDetail";
+import ShowDetail from "./pages/menu/ShowDetail";
 const App = () => {
   /**
    *리덕스에서 state를 가지고 와서 보여주는 변수

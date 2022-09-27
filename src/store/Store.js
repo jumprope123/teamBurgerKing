@@ -20,6 +20,7 @@ let showDetailData = createSlice({
   name: "showDetailData",
   initialState: {
     title: "골든치즈렐라 팩1",
+    description: "",
     imageURL:
       "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png",
     detail: [
@@ -46,8 +47,9 @@ let menuCarouselData = createSlice({
     {
       linkTo: "/ShowDetail",
       imageSrc: "/image/main/menu/specialDiscount/goldencheesepack1.png",
-      imageNM: "골든치즈렐라 팩1",
+      // imageNM: "골든치즈렐라 팩1",
       title: "골든치즈렐라 팩1",
+      description: "",
       imageURL:
         "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png",
       detail: [
@@ -64,8 +66,9 @@ let menuCarouselData = createSlice({
     {
       linkTo: "/ShowDetail",
       imageSrc: "/image/main/menu/specialDiscount/goldencheesepack2.png",
-      imageNM: "골든치즈렐라 팩2",
+      // imageNM: "골든치즈렐라 팩2",
       title: "골든치즈렐라 팩2",
+      description: "",
       imageURL: "/image/main/menu/specialDiscount/goldencheesepack2.png",
       detail: [
         {
@@ -81,8 +84,9 @@ let menuCarouselData = createSlice({
     {
       linkTo: "/ShowDetail",
       imageSrc: "/image/main/menu/specialDiscount/goldencheesepack3.png",
-      imageNM: "골든치즈렐라 팩3",
+      // imageNM: "골든치즈렐라 팩3",
       title: "골든치즈렐라 팩3",
+      description: "",
       imageURL: "/image/main/menu/specialDiscount/goldencheesepack3.png",
       detail: [
         {
@@ -97,8 +101,9 @@ let menuCarouselData = createSlice({
     {
       linkTo: "/ShowDetail",
       imageSrc: "/image/main/menu/specialDiscount/goldencheesepack4.png",
-      imageNM: "골든치즈렐라 팩4",
+      // imageNM: "골든치즈렐라 팩4",
       title: "골든치즈렐라 팩4",
+      description: "",
       imageURL: "/image/main/menu/specialDiscount/goldencheesepack4.png",
       detail: [
         {
@@ -119,14 +124,29 @@ let menuCarouselData = createSlice({
   },
 });
 
+let widthNavBarData = createSlice({
+  name: "widthNavBarData",
+  initialState: {
+    HOME: "/home",
+    메뉴소개: false,
+  },
+  reducers: {
+    changeWidthNavBarData(oldState, newState) {
+      return newState.payload;
+    },
+  },
+});
+
 export let { changeState } = useDefaultHeaderFooter.actions;
 export let { changeShowDetailDataState } = showDetailData.actions;
 export let { changeMenuCarouselData } = menuCarouselData.actions;
+export let { changeWidthNavBarData } = widthNavBarData.actions;
 
 export default configureStore({
   reducer: {
     useDefaultHeaderFooter: useDefaultHeaderFooter.reducer,
     showDetailData: showDetailData.reducer,
     menuCarouselData: menuCarouselData.reducer,
+    widthNavBarData: widthNavBarData.reducer,
   },
 });
