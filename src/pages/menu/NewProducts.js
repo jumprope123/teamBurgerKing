@@ -4,6 +4,7 @@ import {
   changeMenuCarouselData,
   changeShowDetailDataState,
   changeState,
+  changeWidthNavBarData,
 } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import MenuNavBar from "../../components/main/menu/MenuNavBar";
@@ -37,27 +38,146 @@ const NewProducts = () => {
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
-          imageNM: "골든치즈렐라와퍼",
+          // imageNM: "골든치즈렐라와퍼",
+          title: "골든치즈렐라와퍼",
+          description:
+            "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
+          imageURL: "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+          detail: [
+            {
+              imageURL:
+                "/image/main/menu/newProducts/goldencheeselellaWhopperLargeSet.png",
+              title: "골든치즈렐라와퍼라지세트",
+              description: "골든치즈렐라와퍼+프렌치프라이L+콜라L",
+            },
+            {
+              imageURL:
+                "/image/main/menu/newProducts/goldencheeselellaWhopperSet.png",
+              title: "골든치즈렐라와퍼세트",
+              description: "골든치즈렐라와퍼+프렌치프라이R+콜라R",
+            },
+            {
+              imageURL:
+                "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+              title: "골든치즈렐라와퍼",
+              description: "단품",
+            },
+          ],
+          returnLink: "/NewProducts",
         },
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/goldencheeselellaChicken.png",
-          imageNM: "골든치즈렐라치킨버거",
+          // imageNM: "골든치즈렐라치킨버거",
+          title: "골든치즈렐라치킨버거",
+          description:
+            "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
+          imageURL: "/image/main/menu/newProducts/goldencheeselellaChicken.png",
+          detail: [
+            {
+              imageURL:
+                "/image/main/menu/newProducts/goldencheeselellaWhopperLargeSet.png",
+              title: "골든치즈렐라치킨버거라지세트",
+              description: "골든치즈렐라치킨버거+프렌치프라이L+콜라L",
+            },
+            {
+              imageURL:
+                "/image/main/menu/newProducts/goldencheeselellaWhopperSet.png",
+              title: "골든치즈렐라치킨버거세트",
+              description: "골든치즈렐라치킨버거+프렌치프라이R+콜라R",
+            },
+            {
+              imageURL:
+                "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+              title: "골든치즈렐라치킨버거",
+              description: "단품",
+            },
+          ],
+          returnLink: "/NewProducts",
         },
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/tabascoMonster.png",
-          imageNM: "타바스코몬스터",
+          // imageNM: "타바스코몬스터",
+          title: "타바스코몬스터",
+          description:
+            "화끈한 타바스코에 직화구이 순쇠고기, 그리고 바삭한 치킨패티까지! 타바스코 몬스터",
+          imageURL: "/image/main/menu/newProducts/tabascoMonster.png",
+          detail: [
+            {
+              imageURL:
+                "/image/main/menu/newProducts/tabascoMonsterLargeSet.png",
+              title: "타바스코 몬스터 라지세트",
+              description: "타바스코 몬스터 + 프렌치프라이L + 콜라L",
+            },
+            {
+              imageURL: "/image/main/menu/newProducts/tabascoMonsterSet.png",
+              title: "타바스코 몬스터 세트",
+              description: "타바스코 몬스터 + 프렌치프라이R + 콜라R",
+            },
+            {
+              imageURL: "/image/main/menu/newProducts/tabascoMonster.png",
+              title: "타바스코 몬스터",
+              description: "단품",
+            },
+          ],
+          returnLink: "/NewProducts",
         },
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/tabascoDoubleBeef.png",
-          imageNM: "타바스코더블비프",
+          // imageNM: "타바스코더블비프",
+          title: "타바스코더블비프",
+          description:
+            "시그니처 불맛가득 순쇠고기 패티의 풍부한 풍미! 타바스코 더블비프",
+          imageURL: "/image/main/menu/newProducts/tabascoDoubleBeef.png",
+          detail: [
+            {
+              imageURL:
+                "/image/main/menu/newProducts/tabascoDoubleBeefLargeSet.png",
+              title: "타바스코 더블비프 라지세트",
+              description: "타바스코 더블비프 + 프렌치프라이L + 콜라L",
+            },
+            {
+              imageURL: "/image/main/menu/newProducts/tabascoDoubleBeefSet.png",
+              title: "타바스코 더블비프 세트",
+              description: "타바스코 더블비프 + 프렌치프라이R + 콜라R",
+            },
+            {
+              imageURL: "/image/main/menu/newProducts/tabascoDoubleBeef.png",
+              title: "타바스코 더블비프",
+              description: "단품",
+            },
+          ],
+          returnLink: "/NewProducts",
         },
         {
           linkTo: "/showDetail",
           imageSrc: "/image/main/menu/newProducts/tabascoShrimp.png",
-          imageNM: "타바스코슈림프",
+          // imageNM: "타바스코슈림프",
+          title: "타바스코슈림프",
+          description:
+            "화끈한 타바스코에 탱글한 새우패티까지 더해졌다! 타바스코 슈림프",
+          imageURL: "/image/main/menu/newProducts/tabascoShrimp.png",
+          detail: [
+            {
+              imageURL:
+                "/image/main/menu/newProducts/tabascoShrimpLargeSet.png",
+              title: "타바스코 슈림프 라지세트",
+              description: "타바스코 슈림프 + 프렌치프라이L + 콜라L",
+            },
+            {
+              imageURL: "/image/main/menu/newProducts/tabascoShrimpSet.png",
+              title: "타바스코 슈림프 세트",
+              description: "타바스코 슈림프 + 프렌치프라이R + 콜라R",
+            },
+            {
+              imageURL: "/image/main/menu/newProducts/tabascoShrimp.png",
+              title: "타바스코 슈림프",
+              description: "단품",
+            },
+          ],
+          returnLink: "/NewProducts",
         },
       ])
     );
@@ -81,6 +201,8 @@ const NewProducts = () => {
                     dispatch(
                       changeShowDetailDataState({
                         title: "골든치즈렐라와퍼",
+                        description:
+                          "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
                         imageURL:
                           "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
                         detail: [
@@ -106,6 +228,13 @@ const NewProducts = () => {
                         returnLink: "/NewProducts",
                       })
                     );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "신제품(NEW)": "/NewProducts",
+                        상세보기: false,
+                      })
+                    );
                   }}
                 >
                   <div>
@@ -121,6 +250,47 @@ const NewProducts = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "골든치즈렐라치킨버거",
+                        description:
+                          "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!",
+                        imageURL:
+                          "/image/main/menu/newProducts/goldencheeselellaChicken.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/goldencheeselellaWhopperLargeSet.png",
+                            title: "골든치즈렐라치킨버거라지세트",
+                            description:
+                              "골든치즈렐라치킨버거+프렌치프라이L+콜라L",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/goldencheeselellaWhopperSet.png",
+                            title: "골든치즈렐라치킨버거세트",
+                            description:
+                              "골든치즈렐라치킨버거+프렌치프라이R+콜라R",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+                            title: "골든치즈렐라치킨버거",
+                            description: "단품",
+                          },
+                        ],
+                        returnLink: "/NewProducts",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "신제품(NEW)": "/NewProducts",
+                        상세보기: false,
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
@@ -135,6 +305,46 @@ const NewProducts = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "타바스코몬스터",
+                        description: `화끈한 타바스코에 직화구이 순쇠고기, 그리고 바삭한 치킨패티까지! 타바스코 몬스터`,
+                        imageURL:
+                          "/image/main/menu/newProducts/tabascoMonster.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoMonsterLargeSet.png",
+                            title: "타바스코 몬스터 라지세트",
+                            description:
+                              "타바스코 몬스터 + 프렌치프라이L + 콜라L",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoMonsterSet.png",
+                            title: "타바스코 몬스터 세트",
+                            description:
+                              "타바스코 몬스터 + 프렌치프라이R + 콜라R",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoMonster.png",
+                            title: "타바스코 몬스터",
+                            description: "단품",
+                          },
+                        ],
+                        returnLink: "/NewProducts",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "신제품(NEW)": "/NewProducts",
+                        상세보기: false,
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
@@ -149,6 +359,47 @@ const NewProducts = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "타바스코더블비프",
+                        description:
+                          "시그니처 불맛가득 순쇠고기 패티의 풍부한 풍미! 타바스코 더블비프",
+                        imageURL:
+                          "/image/main/menu/newProducts/tabascoDoubleBeef.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoDoubleBeefLargeSet.png",
+                            title: "타바스코 더블비프 라지세트",
+                            description:
+                              "타바스코 더블비프 + 프렌치프라이L + 콜라L",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoDoubleBeefSet.png",
+                            title: "타바스코 더블비프 세트",
+                            description:
+                              "타바스코 더블비프 + 프렌치프라이R + 콜라R",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoDoubleBeef.png",
+                            title: "타바스코 더블비프",
+                            description: "단품",
+                          },
+                        ],
+                        returnLink: "/NewProducts",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "신제품(NEW)": "/NewProducts",
+                        상세보기: false,
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img
@@ -163,6 +414,47 @@ const NewProducts = () => {
                 <Link
                   to="/showDetail"
                   className={"textDecorationNone colorBlack"}
+                  onClick={() => {
+                    dispatch(
+                      changeShowDetailDataState({
+                        title: "타바스코슈림프",
+                        description:
+                          "화끈한 타바스코에 탱글한 새우패티까지 더해졌다! 타바스코 슈림프",
+                        imageURL:
+                          "/image/main/menu/newProducts/tabascoShrimp.png",
+                        detail: [
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoShrimpLargeSet.png",
+                            title: "타바스코 슈림프 라지세트",
+                            description:
+                              "타바스코 슈림프 + 프렌치프라이L + 콜라L",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoShrimpSet.png",
+                            title: "타바스코 슈림프 세트",
+                            description:
+                              "타바스코 슈림프 + 프렌치프라이R + 콜라R",
+                          },
+                          {
+                            imageURL:
+                              "/image/main/menu/newProducts/tabascoShrimp.png",
+                            title: "타바스코 슈림프",
+                            description: "단품",
+                          },
+                        ],
+                        returnLink: "/NewProducts",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "신제품(NEW)": "/NewProducts",
+                        상세보기: false,
+                      })
+                    );
+                  }}
                 >
                   <div>
                     <img

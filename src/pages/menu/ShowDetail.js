@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeState } from "../../../store/Store";
-import WidthNavBar from "../../../components/main/menu/WidthNavBar";
+import { changeState } from "../../store/Store";
+import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import { Link } from "react-router-dom";
 import { faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MenuCarousel from "../../../components/main/menu/MenuCarousel";
-import NutritionalContentsModal from "../../../components/main/menu/NutritionalContentsModal";
+import MenuCarousel from "../../components/main/menu/MenuCarousel";
+import NutritionalContentsModal from "../../components/main/menu/NutritionalContentsModal";
 
 const ShowDetail = () => {
   const NutritionalContentsModalRef = useRef({});
@@ -21,6 +21,13 @@ const ShowDetail = () => {
    * 서비스없이 UI만 있을때 showDetail의 데이터를 보여주기 위한 리덕스 state
    */
   let reduxShowDetailData = useSelector((state) => {
+    return state;
+  });
+
+  /**
+   * 검은색 네비게이션 바를 만들기 위한 리덕스 state
+   */
+  let reduxWidthNavBarData = useSelector((state) => {
     return state;
   });
 
@@ -41,12 +48,13 @@ const ShowDetail = () => {
    * key값이 보여지는값, value값이 클릭시 이동할 Link주소
    * value값이 false선언시 클릭불가능한 text로 나타난다.
    */
-  const [widthNavBarData, setWidthNavBarData] = useState({
-    HOME: "/home",
-    메뉴소개: "/SpecialDiscount",
-    "스페셜&할인팩": "/SpecialDiscount",
-    햄버거상세: false,
-  });
+  const [widthNavBarData, setWidthNavBarData] = useState(
+    reduxWidthNavBarData.widthNavBarData
+  );
+  useEffect(() => {
+    console.log(reduxWidthNavBarData.widthNavBarData);
+    setWidthNavBarData(reduxWidthNavBarData.widthNavBarData);
+  }, [widthNavBarData]);
 
   /**
    * ComponentDidmount와 같은 동작을 하는 Hooks
@@ -142,6 +150,9 @@ const ShowDetail = () => {
           <div className={"row alignItemsCenter"}>
             <div className={"col-6 text-white fontBM_MenuDetailBig"}>
               {ShowDetailData.title}
+              <p className={"fontBM_MenuDetailSmall"}>
+                {ShowDetailData.description}
+              </p>
             </div>
             <div className={"col-6"}>
               <img

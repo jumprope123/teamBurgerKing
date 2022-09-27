@@ -5,6 +5,7 @@ import {
   changeMenuCarouselData,
   changeShowDetailDataState,
   changeState,
+  changeWidthNavBarData,
 } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import MenuNavBar from "../../components/main/menu/MenuNavBar";
@@ -38,8 +39,9 @@ const SpecialDiscount = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack1.png",
-          imageNM: "골든치즈렐라 팩1",
+          // imageNM: "골든치즈렐라 팩1",
           title: "골든치즈렐라 팩1",
+          description: "",
           imageURL:
             "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png",
           detail: [
@@ -56,8 +58,9 @@ const SpecialDiscount = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack2.png",
-          imageNM: "골든치즈렐라 팩2",
+          // imageNM: "골든치즈렐라 팩2",
           title: "골든치즈렐라 팩2",
+          description: "",
           imageURL: "/image/main/menu/specialDiscount/goldencheesepack2.png",
           detail: [
             {
@@ -74,8 +77,9 @@ const SpecialDiscount = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack3.png",
-          imageNM: "골든치즈렐라 팩3",
+          // imageNM: "골든치즈렐라 팩3",
           title: "골든치즈렐라 팩3",
+          description: "",
           imageURL: "/image/main/menu/specialDiscount/goldencheesepack3.png",
           detail: [
             {
@@ -91,8 +95,9 @@ const SpecialDiscount = () => {
         {
           linkTo: "/ShowDetail",
           imageSrc: "/image/main/menu/specialDiscount/goldencheesepack4.png",
-          imageNM: "골든치즈렐라 팩4",
+          // imageNM: "골든치즈렐라 팩4",
           title: "골든치즈렐라 팩4",
+          description: "",
           imageURL: "/image/main/menu/specialDiscount/goldencheesepack4.png",
           detail: [
             {
@@ -128,6 +133,7 @@ const SpecialDiscount = () => {
                     dispatch(
                       changeShowDetailDataState({
                         title: "골든치즈렐라 팩1",
+                        description: "",
                         imageURL:
                           "/image/main/menu/specialDiscount/detail_big_goldencheeselella.png",
                         detail: [
@@ -140,6 +146,13 @@ const SpecialDiscount = () => {
                           },
                         ],
                         returnLink: "/SpecialDiscount",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "스페셜&할인팩": "/SpecialDiscount",
+                        상세보기: false,
                       })
                     );
                   }}
@@ -161,6 +174,7 @@ const SpecialDiscount = () => {
                     dispatch(
                       changeShowDetailDataState({
                         title: "골든치즈렐라 팩2",
+                        description: "",
                         imageURL:
                           "/image/main/menu/specialDiscount/goldencheesepack2.png",
                         detail: [
@@ -172,8 +186,14 @@ const SpecialDiscount = () => {
                               "골든치즈렐라와퍼+치즈와퍼+ 크리미모짜볼5조각+너겟킹4조각+콜라R2",
                           },
                         ],
-
                         returnLink: "/SpecialDiscount",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "스페셜&할인팩": "/SpecialDiscount",
+                        상세보기: false,
                       })
                     );
                   }}
@@ -195,6 +215,7 @@ const SpecialDiscount = () => {
                     dispatch(
                       changeShowDetailDataState({
                         title: "골든치즈렐라 팩3",
+                        description: "",
                         imageURL:
                           "/image/main/menu/specialDiscount/goldencheesepack3.png",
                         detail: [
@@ -207,6 +228,13 @@ const SpecialDiscount = () => {
                           },
                         ],
                         returnLink: "/SpecialDiscount",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "스페셜&할인팩": "/SpecialDiscount",
+                        상세보기: false,
                       })
                     );
                   }}
@@ -228,6 +256,7 @@ const SpecialDiscount = () => {
                     dispatch(
                       changeShowDetailDataState({
                         title: "골든치즈렐라 팩4",
+                        description: "",
                         imageURL:
                           "/image/main/menu/specialDiscount/goldencheesepack4.png",
                         detail: [
@@ -239,8 +268,14 @@ const SpecialDiscount = () => {
                               "골든치즈렐라치킨버거+콰트로치즈와퍼+ 크리미모짜볼5조각+너겟킹4조각+콜라R2",
                           },
                         ],
-
                         returnLink: "/SpecialDiscount",
+                      })
+                    );
+                    dispatch(
+                      changeWidthNavBarData({
+                        HOME: "/home",
+                        "스페셜&할인팩": "/SpecialDiscount",
+                        상세보기: false,
                       })
                     );
                   }}

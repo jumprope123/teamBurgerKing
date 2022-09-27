@@ -73,7 +73,7 @@ const MenuCarousel = (props) => {
                 src={items[j].imageSrc}
                 style={{ width: "180px", height: "150px" }}
               />
-              <p className={"mgt10"}>{items[j].imageNM}</p>
+              <p className={"mgt10"}>{items[j].title}</p>
             </div>
           </Link>
         </div>
