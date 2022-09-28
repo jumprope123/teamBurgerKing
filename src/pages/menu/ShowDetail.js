@@ -148,7 +148,10 @@ const ShowDetail = () => {
         <div className={"col-2"}></div>
         <div className={"col-8"}>
           <div className={"row alignItemsCenter"}>
-            <div className={"col-6 text-white fontBM_MenuDetailBig"}>
+            <div
+              className={"col-6 text-white fontBM_MenuDetailBig"}
+              style={{ lineHeight: "100%" }}
+            >
               {ShowDetailData.title}
               <p className={"fontBM_MenuDetailSmall"}>
                 {ShowDetailData.description}
