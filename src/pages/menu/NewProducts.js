@@ -32,6 +32,7 @@ const NewProducts = () => {
    * true인 경우 Header와 Footer가 존재, 반대의 경우 Main페이지만 나타난다.
    */
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     dispatch(changeState(true));
     dispatch(
       changeMenuCarouselData([

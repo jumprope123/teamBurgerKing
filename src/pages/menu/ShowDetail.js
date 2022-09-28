@@ -39,7 +39,7 @@ const ShowDetail = () => {
    * 스크롤 맨 처음으로 이동 + 리덕스 변경시 내용 변경기능 추가
    */
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     setShowDetailData(reduxShowDetailData.showDetailData);
   }, [reduxShowDetailData]);
 
