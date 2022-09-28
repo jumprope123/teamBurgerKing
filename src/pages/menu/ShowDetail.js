@@ -90,9 +90,10 @@ const ShowDetail = () => {
         });
         break;
       case 2:
+        data.push(<div className={"col-2"}></div>);
         repeatData.map((item) => {
           data.push(
-            <div className={"col-6"}>
+            <div className={"col-4"}>
               <img
                 src={item.imageURL}
                 style={{ width: "258px", height: "194px" }}
@@ -102,6 +103,7 @@ const ShowDetail = () => {
             </div>
           );
         });
+        data.push(<div className={"col-2"}></div>);
         break;
       case 3:
         repeatData.map((item) => {
@@ -153,7 +155,10 @@ const ShowDetail = () => {
               style={{ lineHeight: "100%" }}
             >
               {ShowDetailData.title}
-              <p className={"fontBM_MenuDetailSmall"}>
+              <p
+                className={"fontBM_MenuDetailSmall"}
+                style={{ lineHeight: "120%" }}
+              >
                 {ShowDetailData.description}
               </p>
             </div>
