@@ -3,11 +3,21 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 /**
  * 기본적인 헤더와 푸터를 사용할지를 결정하는 변수
  */
-let useDefaultHeaderFooter = createSlice({
-  name: "useDefaultHeaderFooter",
+let useDefaultHeader = createSlice({
+  name: "useDefaultHeader",
   initialState: true,
   reducers: {
-    changeState(oldState, newState) {
+    changeStateHeader(oldState, newState) {
+      return newState.payload;
+    },
+  },
+});
+
+let useDefaultFooter = createSlice({
+  name: "useDefaultFooter",
+  initialState: true,
+  reducers: {
+    changeStateFooter(oldState, newState) {
       return newState.payload;
     },
   },
@@ -138,14 +148,16 @@ let widthNavBarData = createSlice({
   },
 });
 
-export let { changeState } = useDefaultHeaderFooter.actions;
+export let { changeStateFooter } = useDefaultFooter.actions;
+export let { changeStateHeader } = useDefaultHeader.actions;
 export let { changeShowDetailDataState } = showDetailData.actions;
 export let { changeMenuCarouselData } = menuCarouselData.actions;
 export let { changeWidthNavBarData } = widthNavBarData.actions;
 
 export default configureStore({
   reducer: {
-    useDefaultHeaderFooter: useDefaultHeaderFooter.reducer,
+    useDefaultHeader: useDefaultHeader.reducer,
+    useDefaultFooter: useDefaultFooter.reducer,
     showDetailData: showDetailData.reducer,
     menuCarouselData: menuCarouselData.reducer,
     widthNavBarData: widthNavBarData.reducer,

@@ -4,6 +4,8 @@ import {
   changeMenuCarouselData,
   changeShowDetailDataState,
   changeState,
+  changeStateFooter,
+  changeStateHeader,
   changeWidthNavBarData,
 } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
@@ -33,7 +35,8 @@ const BeverageDessert = () => {
    */
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    dispatch(changeState(true));
+    dispatch(changeStateHeader(true));
+    dispatch(changeStateFooter(true));
     dispatch(
       changeMenuCarouselData([
         {

@@ -267,6 +267,10 @@ w-full{
     display: block;
 }
 
+.displayNone{
+    display: none;
+}
+
 .textAlignCenter{
  text-align: center;
 }
