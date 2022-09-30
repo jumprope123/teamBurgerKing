@@ -166,6 +166,10 @@
     margin-top: 10px;
 }
 
+.mgt15{
+    margin-top: 15px !important;
+}
+
 .mgt25{
     margin-top: 25px;
 }
@@ -234,6 +238,10 @@
     padding-bottom: 10px;
 }
 
+.pb15{
+    padding-bottom: 15px;
+}
+
 .pb40{
     padding-bottom: 40px;
 }
@@ -297,4 +305,12 @@ w-full{
 
 .borderRadius15{
     border-radius: 15px;
+}
+
+.colorRed{
+    color: red;
+}
+
+.colorGray{
+    color: #C0C0C0;
 }
