@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <div className={"row background_white w-full gx-0"}>
+      <div id={"headerDiv"} className={"row background_white w-full gx-0"}>
         <div className={"col-2"}></div>
         <div className={"col-8"}>
           <div className={"row mg0 min-w910"}>

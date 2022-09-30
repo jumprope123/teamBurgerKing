@@ -57,7 +57,10 @@ const WidthNavBar = (props) => {
 
   return (
     <React.Fragment>
-      <div className={"row background_footer w-full min-w910 gx-0"}>
+      <div
+        id={"navDiv"}
+        className={"row background_footer w-full min-w910 gx-0"}
+      >
         <div className={"col-2"}></div>
         <div className={"col-8"}>
           <div className={"mg0 min-w910 displayFlex fontBM_footer_small"}>

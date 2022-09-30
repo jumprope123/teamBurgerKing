@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { changeState } from "../../store/Store";
+import {
+  changeState,
+  changeStateFooter,
+  changeStateHeader,
+} from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import { Link } from "react-router-dom";
 import { faShieldHalved } from "@fortawesome/free-solid-svg-icons";
@@ -52,7 +56,6 @@ const ShowDetail = () => {
     reduxWidthNavBarData.widthNavBarData
   );
   useEffect(() => {
-    console.log(reduxWidthNavBarData.widthNavBarData);
     setWidthNavBarData(reduxWidthNavBarData.widthNavBarData);
   }, [widthNavBarData]);
 
@@ -62,7 +65,8 @@ const ShowDetail = () => {
    * true인 경우 Header와 Footer가 존재, 반대의 경우 Main페이지만 나타난다.
    */
   useEffect(() => {
-    dispatch(changeState(true));
+    dispatch(changeStateHeader(true));
+    dispatch(changeStateFooter(true));
     setShowDetailData(reduxShowDetailData.showDetailData);
     makeDetailDiv();
   }, []);
