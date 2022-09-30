@@ -5,11 +5,16 @@ import WidthNavBar from "../../components/main/menu/WidthNavBar";
 import KakaoMap from "../../components/main/shop/KakaoMap";
 import { Nav } from "react-bootstrap";
 import {
+  faCaretDown,
+  faCheckSquare,
   faCircleChevronDown,
   faCircleChevronUp,
+  faSquareCheck,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CheckBox } from "@mui/icons-material";
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 
 const Shop = () => {
   /**
@@ -95,6 +100,13 @@ const Shop = () => {
   }
 
   const [faCircleChevronValue, setFaCircleChevronValue] = useState("down");
+  const [all, setAll] = useState(false);
+  const [delivery, setDelivery] = useState(false);
+  const [kingOrder, setKingOrder] = useState(false);
+  const [twentyFourHours, setTwentyFourHours] = useState(false);
+  const [morningMenu, setMorningMenu] = useState(false);
+  const [parking, setParking] = useState(false);
+  const [drive, setDrive] = useState(false);
 
   function shopOptions() {
     return (
@@ -177,7 +189,180 @@ const Shop = () => {
                 />
               </div>
             </div>
+            {/*구분 border*/}
             <div style={{ borderBottom: "1px solid #F2F2F2" }}></div>
+            {/*체크박스 영역 - START*/}
+            <div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                onClick={() => {
+                  all == true ? setAll(false) : setAll(true);
+                  setDelivery(false);
+                  setKingOrder(false);
+                  setTwentyFourHours(false);
+                  setMorningMenu(false);
+                  setParking(false);
+                  setDrive(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={all == true ? "colorRed ft40" : "colorGray ft40"}
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>전체</div>
+              </div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                onClick={() => {
+                  delivery == true ? setDelivery(false) : setDelivery(true);
+                  setAll(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={
+                      delivery == true ? "colorRed ft40" : "colorGray ft40"
+                    }
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>
+                  <img src="/image/main/shop/delivery.png" />
+                  &nbsp;&nbsp;딜리버리
+                </div>
+              </div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                onClick={() => {
+                  kingOrder == true ? setKingOrder(false) : setKingOrder(true);
+                  setAll(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={
+                      kingOrder == true ? "colorRed ft40" : "colorGray ft40"
+                    }
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>
+                  <img src="/image/main/shop/kingOrder.png" />
+                  &nbsp;&nbsp;킹오더
+                </div>
+              </div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                onClick={() => {
+                  twentyFourHours == true
+                    ? setTwentyFourHours(false)
+                    : setTwentyFourHours(true);
+                  setAll(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={
+                      twentyFourHours == true
+                        ? "colorRed ft40"
+                        : "colorGray ft40"
+                    }
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>
+                  <img src="/image/main/shop/24Hours.png" />
+                  &nbsp;&nbsp;24시간매장
+                </div>
+              </div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                onClick={() => {
+                  morningMenu == true
+                    ? setMorningMenu(false)
+                    : setMorningMenu(true);
+                  setAll(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={
+                      morningMenu == true ? "colorRed ft40" : "colorGray ft40"
+                    }
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>
+                  <img src="/image/main/shop/morningMenu.png" />
+                  &nbsp;&nbsp;아침메뉴
+                </div>
+              </div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                onClick={() => {
+                  parking == true ? setParking(false) : setParking(true);
+                  setAll(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={
+                      parking == true ? "colorRed ft40" : "colorGray ft40"
+                    }
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>
+                  <img src="/image/main/shop/parking.png" />
+                  &nbsp;&nbsp;주차가능
+                </div>
+              </div>
+              <div
+                className={"row gx-0 alignItemsCenter mgt15"}
+                style={{ paddingBottom: "10px" }}
+                onClick={() => {
+                  drive == true ? setDrive(false) : setDrive(true);
+                  setAll(false);
+                }}
+              >
+                <div className={"col-3 textAlignCenter"}>
+                  <FontAwesomeIcon
+                    icon={faSquareCheck}
+                    className={
+                      drive == true ? "colorRed ft40" : "colorGray ft40"
+                    }
+                  />
+                </div>
+                <div className={"col-9 alignItemsCenter"}>
+                  <img src="/image/main/shop/drive.png" />
+                  &nbsp;&nbsp;드라이브스루
+                </div>
+              </div>
+            </div>
+            {/*체크박스 영역 - END*/}
+            <div
+              id={"applyBtn"}
+              className={
+                "displayFlex justify-content-center textAlignCenter alignItemsCenter text-white"
+              }
+              style={{ width: "324px", height: "54px", background: "red" }}
+              onMouseOver={() => {
+                window.document.getElementById("applyBtn").style.cursor =
+                  "pointer";
+              }}
+              onMouseLeave={() => {
+                window.document.getElementById("applyBtn").style.cursor =
+                  "default";
+              }}
+              onClick={() => {
+                //적용버튼 실제 구현X
+                setFaCircleChevronValue("up");
+              }}
+            >
+              <span>적용</span>
+            </div>
             {/*상단 타이틀 - END */}
           </div>
         </div>
