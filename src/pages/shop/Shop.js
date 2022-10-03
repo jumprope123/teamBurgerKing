@@ -70,7 +70,9 @@ const Shop = () => {
         document.getElementById("headerDiv").clientHeight -
         6
     );
+    setShopNavHeight(document.getElementById("shopNav").clientHeight);
   };
+  const [shopNavHeight, setShopNavHeight] = useState(46);
 
   const [value, setValue] = useState(1);
 
@@ -96,7 +98,10 @@ const Shop = () => {
             </button>
             <div className={"mgt25"}></div>
           </div>
-          <TabContentDetail mapHeight={mapHeight} />
+          <TabContentDetail
+            mapHeight={mapHeight}
+            shopNavHeight={shopNavHeight}
+          />
         </div>
       );
     } else if (value === 1) {

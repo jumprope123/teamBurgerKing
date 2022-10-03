@@ -100,7 +100,7 @@ const TabContentDetail = (props) => {
   return (
     <div
       className={"row background_F5EBDC overFlowYScroll"}
-      style={{ height: props.mapHeight - 176 }}
+      style={{ height: props.mapHeight - props.shopNavHeight - 124 }}
     >
       <div
         className={
