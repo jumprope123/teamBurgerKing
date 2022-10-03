@@ -157,6 +157,9 @@
     background-color: #F2EBE6;
 }
 
+.background_F5EBDC{
+    background-color: #F5EBDC;
+}
 
 .mg0{
     margin: 0px;
@@ -210,6 +213,14 @@
     margin-bottom: 100px !important;
 }
 
+.mgr10{
+    margin-right: 10px;
+}
+
+.mgl10{
+    margin-left: 10px;
+}
+
 .mgl20{
     margin-left: 20px;
 }
@@ -224,6 +235,10 @@
 
 .pd0{
     padding:0px;
+}
+
+.pt10{
+    padding-top: 10px;
 }
 
 .pt20{
@@ -313,4 +328,9 @@ w-full{
 
 .colorGray{
     color: #C0C0C0;
+}
+
+.inputCustom{
+    border: none;
+    border-bottom: 1px solid black;
 }

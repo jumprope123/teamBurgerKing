@@ -9,12 +9,15 @@ import {
   faCheckSquare,
   faCircleChevronDown,
   faCircleChevronUp,
+  faLocationCrosshairs,
+  faSearch,
   faSquareCheck,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CheckBox } from "@mui/icons-material";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
+import TabContentDetail from "../../components/main/shop/TabContentDetail";
 
 const Shop = () => {
   /**
@@ -67,7 +70,9 @@ const Shop = () => {
         document.getElementById("headerDiv").clientHeight -
         6
     );
+    setShopNavHeight(document.getElementById("shopNav").clientHeight);
   };
+  const [shopNavHeight, setShopNavHeight] = useState(46);
 
   const [value, setValue] = useState(1);
 
@@ -75,25 +80,79 @@ const Shop = () => {
     if (value === 0) {
       return (
         <div>
-          {shopOptions()}
-          <div>Tab 1 내용입니다.</div>
-          {resultDiv()}
+          <div style={{ height: "124px" }}>
+            {shopOptions()}
+            <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
+            <button
+              className={"w-full fontBM_MenuName background_white"}
+              style={{ height: "60px", border: "1px solid #D5D5D5" }}
+            >
+              <div
+                className={
+                  "displayFlex justify-content-center alignItemsCenter textAlignCenter"
+                }
+              >
+                <FontAwesomeIcon icon={faLocationCrosshairs} />
+                <div style={{ marginTop: "4px" }}>&nbsp;현 위치로 매장검색</div>
+              </div>
+            </button>
+            <div className={"mgt25"}></div>
+          </div>
+          <TabContentDetail
+            mapHeight={mapHeight}
+            shopNavHeight={shopNavHeight}
+          />
         </div>
       );
     } else if (value === 1) {
       return (
         <div>
-          {shopOptions()}
-          <div>Tab 2 내용입니다.</div>
-          {resultDiv()}
+          <div style={{ height: "124px" }}>
+            {shopOptions()}
+            <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
+            <div
+              className={"displayFlex justify-content-center textAlignCenter"}
+            >
+              <input
+                id={"searchShop"}
+                className={"w-full inputCustom"}
+                style={{ height: "60px" }}
+              />
+              <div style={{ marginTop: "10px" }}>
+                <FontAwesomeIcon icon={faSearch} style={{ fontSize: "50px" }} />
+              </div>
+            </div>
+            <div className={"mgt25"}></div>
+          </div>
+          <TabContentDetail mapHeight={mapHeight} />
         </div>
       );
     } else if (value === 2) {
       return (
         <div>
-          {shopOptions()}
-          <div>Tab 3 내용입니다.</div>
-          {resultDiv()}
+          <div style={{ height: "124px" }}>
+            {shopOptions()}
+            <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
+            <div
+              className={"displayFlex justify-content-center textAlignCenter"}
+            >
+              <select
+                className={"w-full inputCustom mgr10 fontBM_menuDetail"}
+                style={{ height: "60px" }}
+              >
+                <option>특별/광역시</option>
+                <option>서울</option>
+              </select>
+              <select
+                className={"w-full inputCustom mgl10 fontBM_menuDetail"}
+                style={{ height: "60px" }}
+              >
+                <option>군,구</option>
+              </select>
+            </div>
+            <div className={"mgt25"}></div>
+          </div>
+          <TabContentDetail mapHeight={mapHeight} />
         </div>
       );
     }
@@ -373,10 +432,6 @@ const Shop = () => {
     );
   }
 
-  function resultDiv() {
-    return <div> 결과값들 </div>;
-  }
-
   return (
     <React.Fragment>
       <WidthNavBar WidthNavBarData={widthNavBarData} />
@@ -387,6 +442,7 @@ const Shop = () => {
         </div>
         <div className={"col-3 gx-0"} style={{ paddingLeft: "7px" }}>
           <Nav
+            id={"shopNav"}
             fill
             justify
             className="justify-content-center fontBM_MenuName"
