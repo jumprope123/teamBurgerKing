@@ -148,11 +148,27 @@ let widthNavBarData = createSlice({
   },
 });
 
+let mapSearchData = createSlice({
+  name: "mapSearchData",
+  initialState: {
+    name: "종로점",
+    address: "서울특별시 종로구 종로 94",
+    tel: "02-2285-4838",
+    icon: ["/image/main/shop/delivery.png", "/image/main/shop/kingOrder.png"],
+  },
+  reducers: {
+    changeMapSearchData(oldState, newState) {
+      return newState.payload;
+    },
+  },
+});
+
 export let { changeStateFooter } = useDefaultFooter.actions;
 export let { changeStateHeader } = useDefaultHeader.actions;
 export let { changeShowDetailDataState } = showDetailData.actions;
 export let { changeMenuCarouselData } = menuCarouselData.actions;
 export let { changeWidthNavBarData } = widthNavBarData.actions;
+export let { changeMapSearchData } = mapSearchData.actions;
 
 export default configureStore({
   reducer: {
@@ -161,5 +177,6 @@ export default configureStore({
     showDetailData: showDetailData.reducer,
     menuCarouselData: menuCarouselData.reducer,
     widthNavBarData: widthNavBarData.reducer,
+    mapSearchData: mapSearchData.reducer,
   },
 });
