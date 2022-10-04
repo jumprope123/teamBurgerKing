@@ -13,21 +13,22 @@ const TabContentDetail = (props) => {
   });
 
   useEffect(() => {
-    console.log(reduxMapSearchData.mapSearchData);
-    let result = [];
-    for (let i = 0; i < reduxMapSearchData.mapSearchData.length; i++) {
-      result.push({
-        name: reduxMapSearchData.mapSearchData[i]["place_name"],
-        address: reduxMapSearchData.mapSearchData[i]["road_address_name"],
-        tel: reduxMapSearchData.mapSearchData[i]["phone"],
-        icon: [
-          "/image/main/shop/delivery.png",
-          "/image/main/shop/kingOrder.png",
-        ],
-      });
-    }
-    setResultData(result);
-  }, []);
+      // console.log(reduxMapSearchData.mapSearchData);
+      let result = [];
+      for (let i = 0; i < reduxMapSearchData.mapSearchData.length; i++) {
+        result.push({
+          name: reduxMapSearchData.mapSearchData[i]["place_name"],
+          address: reduxMapSearchData.mapSearchData[i]["road_address_name"],
+          tel: reduxMapSearchData.mapSearchData[i]["phone"],
+          icon: [
+            "/image/main/shop/delivery.png",
+            "/image/main/shop/kingOrder.png",
+          ],
+        });
+      }
+      setResultData(result);
+
+  }, [reduxMapSearchData.mapSearchData]);
 
   useEffect(() => {
     setDivCnt(resultData.length);
