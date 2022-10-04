@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeStateFooter, changeStateHeader } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
@@ -20,6 +20,7 @@ import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import TabContentDetail from "../../components/main/shop/TabContentDetail";
 
 const Shop = () => {
+  const kakaomap=useRef();
   /**
    * 리덕스의 리듀서를 사용하기 위한 변수선언
    */
@@ -86,6 +87,11 @@ const Shop = () => {
             <button
               className={"w-full fontBM_MenuName background_white"}
               style={{ height: "60px", border: "1px solid #D5D5D5" }}
+              onClick={()=>{
+                navigator.geolocation.getCurrentPosition((position)=>{
+                  kakaomap.current.clickThisPosition(position);
+                })
+              }}
             >
               <div
                 className={
@@ -432,7 +438,7 @@ const Shop = () => {
       {/*메인 화면 구성 - START*/}
       <div className={"row w-full"}>
         <div className={"col-9 mg0 gx-3"}>
-          <KakaoMap mapHeight={mapHeight} />
+          <KakaoMap ref={kakaomap} mapHeight={mapHeight}/>
         </div>
         <div className={"col-3 gx-0"} style={{ paddingLeft: "7px" }}>
           <Nav
