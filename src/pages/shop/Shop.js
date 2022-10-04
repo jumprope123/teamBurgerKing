@@ -98,10 +98,6 @@ const Shop = () => {
             </button>
             <div className={"mgt25"}></div>
           </div>
-          <TabContentDetail
-            mapHeight={mapHeight}
-            shopNavHeight={shopNavHeight}
-          />
         </div>
       );
     } else if (value === 1) {
@@ -124,7 +120,6 @@ const Shop = () => {
             </div>
             <div className={"mgt25"}></div>
           </div>
-          <TabContentDetail mapHeight={mapHeight} />
         </div>
       );
     } else if (value === 2) {
@@ -152,7 +147,6 @@ const Shop = () => {
             </div>
             <div className={"mgt25"}></div>
           </div>
-          <TabContentDetail mapHeight={mapHeight} />
         </div>
       );
     }
@@ -499,6 +493,10 @@ const Shop = () => {
             </Nav.Item>
           </Nav>
           <TabContent />
+          <TabContentDetail
+            mapHeight={mapHeight}
+            shopNavHeight={shopNavHeight}
+          />
         </div>
       </div>
       {/*메인 화면 구성 - END*/}

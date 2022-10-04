@@ -1,53 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const TabContentDetail = (props) => {
   const [resultData, setResultData] = useState([]);
   const [divCnt, setDivCnt] = useState(0);
+
+  /**
+   * 리덕스에서 mapSearchData 값을 가져오기 위한 변수선언
+   */
+  let reduxMapSearchData = useSelector((state) => {
+    return state;
+  });
+
   useEffect(() => {
-    setResultData([
-      {
-        name: "충무로역점",
-        address: "서울특별시 중구 퇴계로 216",
-        tel: "02-2285-0337",
+    console.log(reduxMapSearchData.mapSearchData);
+    let result = [];
+    for (let i = 0; i < reduxMapSearchData.mapSearchData.length; i++) {
+      result.push({
+        name: reduxMapSearchData.mapSearchData[i]["place_name"],
+        address: reduxMapSearchData.mapSearchData[i]["road_address_name"],
+        tel: reduxMapSearchData.mapSearchData[i]["phone"],
         icon: [
           "/image/main/shop/delivery.png",
           "/image/main/shop/kingOrder.png",
         ],
-      },
-      {
-        name: "종로점",
-        address: "서울특별시 종로구 종로 94",
-        tel: "02-2285-4838",
-        icon: [
-          "/image/main/shop/delivery.png",
-          "/image/main/shop/kingOrder.png",
-        ],
-      },
-      {
-        name: "동국대점",
-        address: "서울특별시 중구 필동로1길 30",
-        tel: "02-2277-3006",
-        icon: ["/image/main/shop/kingOrder.png"],
-      },
-      {
-        name: "종로구청점",
-        address: "서울특별시 종로구 삼봉로57",
-        tel: "02-722-0238",
-        icon: ["/image/main/shop/kingOrder.png"],
-      },
-      {
-        name: "시청역점",
-        address: "서울특별시 중구 서소문로 136",
-        tel: "02-777-0332",
-        icon: ["/image/main/shop/kingOrder.png"],
-      },
-      {
-        name: "회현역점",
-        address: "서울특별시 중구 퇴계로 52",
-        tel: "070-7462-6807",
-        icon: ["/image/main/shop/kingOrder.png"],
-      },
-    ]);
+      });
+    }
+    setResultData(result);
   }, []);
 
   useEffect(() => {

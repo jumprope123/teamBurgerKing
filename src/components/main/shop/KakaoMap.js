@@ -1,9 +1,16 @@
 /* global kakao */
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeMapSearchData } from "../../../store/Store";
 
 const { kakao } = window;
 
 const KakaoMap = (props) => {
+  /**
+   * 리덕스의 리듀서를 사용하기 위한 변수선언
+   */
+  let dispatch = useDispatch();
+
   const [map, setMap] = useState(null);
 
   //처음 지도 그리기
@@ -21,59 +28,58 @@ const KakaoMap = (props) => {
 
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-    // 마커를 표시할 위치와 title 객체 배열입니다
-    var positions = [
-      {
-        title: "버거킹 종로구청점",
-        latlng: new kakao.maps.LatLng(37.57253458172258, 126.98050426601237),
-      },
-      {
-        title: "버거킹 종로점",
-        latlng: new kakao.maps.LatLng(37.569931723536165, 126.98817958379975),
-      },
-      {
-        title: "버거킹 혜화점",
-        latlng: new kakao.maps.LatLng(37.58344495913932, 127.00215109885075),
-      },
-      {
-        title: "버거킹 서대문역점",
-        latlng: new kakao.maps.LatLng(37.56294567440028, 126.96956746396184),
-      },
-      {
-        title: "버거킹 시청역점",
-        latlng: new kakao.maps.LatLng(37.56364769609941, 126.97606970027857),
-      },
-      {
-        title: "버거킹 회현역점",
-        latlng: new kakao.maps.LatLng(37.55862514042776, 126.97868572218866),
-      },
-      {
-        title: "버거킹 충무로역점",
-        latlng: new kakao.maps.LatLng(37.56139530010465, 126.99572736608742),
-      },
-      {
-        title: "버거킹 동국대점",
-        latlng: new kakao.maps.LatLng(37.558072939571794, 126.99835609928371),
-      },
-    ];
+    // 장소 검색 객체를 생성합니다
+    var ps = new kakao.maps.services.Places();
 
-    // 마커 이미지의 이미지 주소입니다
-    var imageSrc = "/image/main/shop/maker.png";
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new kakao.maps.services.Geocoder();
 
-    for (var i = 0; i < positions.length; i++) {
-      // 마커 이미지의 이미지 크기 입니다
-      var imageSize = new kakao.maps.Size(100, 100);
+    // 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+    kakao.maps.event.addListener(map, "center_changed", function () {
+      // 지도의 중심좌표를 얻어옵니다
+      var latlng = map.getCenter();
 
-      // 마커 이미지를 생성합니다
-      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
-      // 마커를 생성합니다
-      var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position: positions[i].latlng, // 마커를 표시할 위치
-        title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        image: markerImage, // 마커 이미지
+      searchAddrFromCoords(latlng, function (result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+          console.log(result[0]["address_name"]);
+        }
       });
+      console.log(latlng);
+    });
+
+    function searchAddrFromCoords(coords, callback) {
+      // 좌표로 행정동 주소 정보를 요청합니다
+      geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);
+    }
+
+    // 키워드로 장소를 검색합니다
+    ps.keywordSearch("버거킹", placesSearchCB);
+
+    // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+    function placesSearchCB(data, status, pagination) {
+      if (status === kakao.maps.services.Status.OK) {
+        makeMarker(data);
+        dispatch(changeMapSearchData(data));
+      }
+    }
+    function makeMarker(positions) {
+      // 마커 이미지의 이미지 주소입니다
+      console.log(positions);
+      var imageSrc = "/image/main/shop/maker.png";
+      for (var i = 0; i < positions.length; i++) {
+        // 마커 이미지의 이미지 크기 입니다
+        var imageSize = new kakao.maps.Size(100, 100);
+
+        // 마커 이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+        // 마커를 생성합니다
+        new kakao.maps.Marker({
+          map: map, // 마커를 표시할 지도
+          position: new kakao.maps.LatLng(positions[i]["y"], positions[i]["x"]), // 마커를 표시할 위치
+          title: positions[i]["place_name"], // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          image: markerImage, // 마커 이미지
+        });
+      }
     }
   }, []);
 
@@ -82,8 +88,8 @@ const KakaoMap = (props) => {
       style={{
         width: "100%",
         display: "inline-block",
-        marginLeft: "5px",
-        marginRight: "5px",
+        marginLeft: "0px",
+        marginRight: "0px",
       }}
     >
       <div id="map" style={{ width: "100%", height: props.mapHeight }}></div>
