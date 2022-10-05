@@ -49,6 +49,7 @@ const KakaoMap = forwardRef((props, ref) => {
     var geocoder = new kakao.maps.services.Geocoder();
     getMarker();
     // 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+    let location = "";
     kakao.maps.event.addListener(map, "center_changed", getMarker);
 
     function getMarker() {
@@ -66,18 +67,22 @@ const KakaoMap = forwardRef((props, ref) => {
             " " +
             "버거킹";
           // 키워드로 장소를 검색합니다
-          ps.keywordSearch(place, placesSearchCB);
 
-          // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-          function placesSearchCB(data, status, pagination) {
-            if (status === kakao.maps.services.Status.OK) {
-              makeMarker(data);
-              setMarkers(map);
-              dispatch(changeMapSearchData(data));
-            }
+          if (place != location) {
+            ps.keywordSearch(place, placesSearchCB);
           }
+          location = place;
+          // 키워드 검색 완료 시 호출되는 콜백함수 입니다
         }
       });
+    }
+
+    function placesSearchCB(data, status, pagination) {
+      if (status === kakao.maps.services.Status.OK) {
+        makeMarker(data);
+        setMarkers(map);
+        dispatch(changeMapSearchData(data));
+      }
     }
 
     // 배열에 추가된 마커들을 지도에 표시하는 함수입니다
