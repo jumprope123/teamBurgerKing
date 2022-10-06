@@ -334,3 +334,6 @@ w-full{
     border: none;
     border-bottom: 1px solid black;
 }
+
+.customoverlay {position:relative;bottom:-30px;border-radius:15px;}
+.customoverlay .title {display:block;text-align:center;padding:10px 15px ;font-size:20px; background-color: black; color: white; border-radius: 15px; font-family: BMJUA;}
