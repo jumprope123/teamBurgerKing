@@ -5,7 +5,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
 } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeMapSearchData } from "../../../store/Store";
 
 const { kakao } = window;
@@ -23,7 +23,7 @@ const KakaoMap = forwardRef((props, ref) => {
    * 리덕스의 리듀서를 사용하기 위한 변수선언
    */
   let dispatch = useDispatch();
-
+  let overlayMarkers = "";
   const [map, setMap] = useState(null);
 
   //처음 지도 그리기
@@ -138,12 +138,32 @@ const KakaoMap = forwardRef((props, ref) => {
         // 마커에 클릭이벤트를 등록합니다
         let x = positions[i]["x"];
         let y = positions[i]["y"];
+        let clickedMarker = positions[i];
         kakao.maps.event.addListener(marker, "click", function () {
           // 이동할 위도 경도 위치를 생성합니다
           var moveLatLon = new kakao.maps.LatLng(y, x);
 
           // 지도 중심을 이동 시킵니다
           map.panTo(moveLatLon);
+          // 커스텀 오버레이에 표시할 컨텐츠 입니다
+          var content =
+            '<div class="customoverlay">' +
+            '    <span class="title">' +
+            clickedMarker["place_name"] +
+            "</span>" +
+            "</div>";
+
+          // 마커 위에 커스텀오버레이를 표시합니다
+          // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+          var overlay = new kakao.maps.CustomOverlay({
+            content: content,
+            position: new kakao.maps.LatLng(y, x), // 마커를 표시할 위치
+          });
+          if (overlayMarkers != "") {
+            overlayMarkers.setMap(null);
+          }
+          overlay.setMap(map);
+          overlayMarkers = overlay;
         });
       }
     }
