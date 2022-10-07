@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeStateFooter, changeStateHeader } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
@@ -18,9 +18,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CheckBox } from "@mui/icons-material";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import TabContentDetail from "../../components/main/shop/TabContentDetail";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Shop = () => {
-  const kakaomap=useRef();
+  const kakaomap = useRef();
   /**
    * 리덕스의 리듀서를 사용하기 위한 변수선언
    */
@@ -87,10 +89,10 @@ const Shop = () => {
             <button
               className={"w-full fontBM_MenuName background_white"}
               style={{ height: "60px", border: "1px solid #D5D5D5" }}
-              onClick={()=>{
-                navigator.geolocation.getCurrentPosition((position)=>{
+              onClick={() => {
+                navigator.geolocation.getCurrentPosition((position) => {
                   kakaomap.current.clickThisPosition(position);
-                })
+                });
               }}
             >
               <div
@@ -119,9 +121,48 @@ const Shop = () => {
                 id={"searchShop"}
                 className={"w-full inputCustom"}
                 style={{ height: "60px" }}
+                onKeyUp={(event) => {
+                  if (event.keyCode === 13) {
+                    if (
+                      document.getElementById("searchShop").value == null ||
+                      document.getElementById("searchShop").value == "" ||
+                      document.getElementById("searchShop").value == undefined
+                    ) {
+                      Swal.fire({
+                        title: "검색 조건을 입력 해 주세요.",
+                        icon: "warning",
+                        confirmButtonText: "확인",
+                      });
+                    } else {
+                      kakaomap.current.searchShopName(
+                        document.getElementById("searchShop").value
+                      );
+                    }
+                  }
+                }}
               />
               <div style={{ marginTop: "10px" }}>
-                <FontAwesomeIcon icon={faSearch} style={{ fontSize: "50px" }} />
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  style={{ fontSize: "50px" }}
+                  onClick={() => {
+                    if (
+                      document.getElementById("searchShop").value == null ||
+                      document.getElementById("searchShop").value == "" ||
+                      document.getElementById("searchShop").value == undefined
+                    ) {
+                      Swal.fire({
+                        title: "검색 조건을 입력 해 주세요.",
+                        icon: "warning",
+                        confirmButtonText: "확인",
+                      });
+                    } else {
+                      kakaomap.current.searchShopName(
+                        document.getElementById("searchShop").value
+                      );
+                    }
+                  }}
+                />
               </div>
             </div>
             <div className={"mgt25"}></div>
@@ -438,7 +479,7 @@ const Shop = () => {
       {/*메인 화면 구성 - START*/}
       <div className={"row w-full"}>
         <div className={"col-9 mg0 gx-3"}>
-          <KakaoMap ref={kakaomap} mapHeight={mapHeight}/>
+          <KakaoMap ref={kakaomap} mapHeight={mapHeight} />
         </div>
         <div className={"col-3 gx-0"} style={{ paddingLeft: "7px" }}>
           <Nav
