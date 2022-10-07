@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import ShopDetailModal from "./ShopDetailModal";
+import NutritionalContentsModal from "../menu/NutritionalContentsModal";
 
 const TabContentDetail = (props) => {
   const [resultData, setResultData] = useState([]);
   const [divCnt, setDivCnt] = useState(0);
-
+  const ShopDetailModalRef = useRef({});
   /**
    * 리덕스에서 mapSearchData 값을 가져오기 위한 변수선언
    */
@@ -13,21 +15,20 @@ const TabContentDetail = (props) => {
   });
 
   useEffect(() => {
-      // console.log(reduxMapSearchData.mapSearchData);
-      let result = [];
-      for (let i = 0; i < reduxMapSearchData.mapSearchData.length; i++) {
-        result.push({
-          name: reduxMapSearchData.mapSearchData[i]["place_name"],
-          address: reduxMapSearchData.mapSearchData[i]["road_address_name"],
-          tel: reduxMapSearchData.mapSearchData[i]["phone"],
-          icon: [
-            "/image/main/shop/delivery.png",
-            "/image/main/shop/kingOrder.png",
-          ],
-        });
-      }
-      setResultData(result);
-
+    let result = [];
+    for (let i = 0; i < reduxMapSearchData.mapSearchData.length; i++) {
+      result.push({
+        name: reduxMapSearchData.mapSearchData[i]["place_name"],
+        address: reduxMapSearchData.mapSearchData[i]["road_address_name"],
+        tel: reduxMapSearchData.mapSearchData[i]["phone"],
+        icon: [
+          //  버거킹 db를 알 수가 없어 하드코딩 처리
+          "/image/main/shop/delivery.png",
+          "/image/main/shop/kingOrder.png",
+        ],
+      });
+    }
+    setResultData(result);
   }, [reduxMapSearchData.mapSearchData]);
 
   useEffect(() => {
@@ -44,8 +45,22 @@ const TabContentDetail = (props) => {
           }
         >
           <div
+            id={"shopDetailWhiteBox" + i}
             className={"col-10 background_white"}
             style={{ width: "379px", height: "168px" }}
+            onMouseOver={() => {
+              window.document.getElementById(
+                "shopDetailWhiteBox" + i
+              ).style.cursor = "pointer";
+            }}
+            onMouseLeave={() => {
+              window.document.getElementById(
+                "shopDetailWhiteBox" + i
+              ).style.cursor = "default";
+            }}
+            onClick={() => {
+              ShopDetailModalRef.current.onOpen(resultData[i]);
+            }}
           >
             <div className={"mgl20"}>
               <p className={"mgt10 fontBM_btn_menuDetail"}>
@@ -78,24 +93,27 @@ const TabContentDetail = (props) => {
   }
 
   return (
-    <div
-      className={"row background_F5EBDC overFlowYScroll"}
-      style={{ height: props.mapHeight - props.shopNavHeight - 124 }}
-    >
+    <React.Fragment>
+      <ShopDetailModal ref={ShopDetailModalRef} />
       <div
-        className={
-          "col-12 pt10 mgb10 fontBM_MenuNavBar_small displayFlex justify-content-center "
-        }
+        className={"row background_F5EBDC overFlowYScroll"}
+        style={{ height: props.mapHeight - props.shopNavHeight - 124 }}
       >
-        <div className={"row"}>
-          <div className={"col-12"}>
-            <span className={"colorRed"}>{divCnt}개</span>의 검색결과가
-            있습니다.
-            {makeResult()}
+        <div
+          className={
+            "col-12 pt10 mgb10 fontBM_MenuNavBar_small displayFlex justify-content-center "
+          }
+        >
+          <div className={"row"}>
+            <div className={"col-12"}>
+              <span className={"colorRed"}>{divCnt}개</span>의 검색결과가
+              있습니다.
+              {makeResult()}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
