@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeStateFooter, changeStateHeader } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
@@ -10,6 +10,7 @@ import {
   faCircleChevronDown,
   faCircleChevronUp,
   faLocationCrosshairs,
+  faRefresh,
   faSearch,
   faSquareCheck,
   faXmark,
@@ -18,9 +19,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CheckBox } from "@mui/icons-material";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import TabContentDetail from "../../components/main/shop/TabContentDetail";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Shop = () => {
-  const kakaomap=useRef();
+  const kakaomap = useRef();
   /**
    * 리덕스의 리듀서를 사용하기 위한 변수선언
    */
@@ -47,6 +50,13 @@ const Shop = () => {
     dispatch(changeStateFooter(false));
     setFaCircleChevronValue("up");
     setValue(0);
+    setAll(true);
+    setDelivery(false);
+    setKingOrder(false);
+    setTwentyFourHours(false);
+    setMorningMenu(false);
+    setParking(false);
+    setDrive(false);
   }, []);
 
   useEffect(() => {
@@ -82,15 +92,42 @@ const Shop = () => {
       return (
         <div>
           <div style={{ height: "124px" }}>
-            {shopOptions()}
+            <div className={"row"}>
+              <div className={"col-6"}>{shopOptions()}</div>
+              <div className={"col-6 textAlignRight"}>
+                <FontAwesomeIcon
+                  id={"refreshBtn"}
+                  style={{ fontSize: "30px", marginTop: "2px" }}
+                  icon={faRefresh}
+                  onMouseOver={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "pointer";
+                  }}
+                  onMouseLeave={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "default";
+                  }}
+                  onClick={() => {
+                    setAll(true);
+                    setDelivery(false);
+                    setKingOrder(false);
+                    setTwentyFourHours(false);
+                    setMorningMenu(false);
+                    setParking(false);
+                    setDrive(false);
+                    kakaomap.current.clickRefresh();
+                  }}
+                />
+              </div>
+            </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
             <button
               className={"w-full fontBM_MenuName background_white"}
               style={{ height: "60px", border: "1px solid #D5D5D5" }}
-              onClick={()=>{
-                navigator.geolocation.getCurrentPosition((position)=>{
+              onClick={() => {
+                navigator.geolocation.getCurrentPosition((position) => {
                   kakaomap.current.clickThisPosition(position);
-                })
+                });
               }}
             >
               <div
@@ -110,7 +147,34 @@ const Shop = () => {
       return (
         <div>
           <div style={{ height: "124px" }}>
-            {shopOptions()}
+            <div className={"row"}>
+              <div className={"col-6"}>{shopOptions()}</div>
+              <div className={"col-6 textAlignRight"}>
+                <FontAwesomeIcon
+                  id={"refreshBtn"}
+                  style={{ fontSize: "30px", marginTop: "2px" }}
+                  icon={faRefresh}
+                  onMouseOver={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "pointer";
+                  }}
+                  onMouseLeave={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "default";
+                  }}
+                  onClick={() => {
+                    setAll(true);
+                    setDelivery(false);
+                    setKingOrder(false);
+                    setTwentyFourHours(false);
+                    setMorningMenu(false);
+                    setParking(false);
+                    setDrive(false);
+                    kakaomap.current.clickRefresh();
+                  }}
+                />
+              </div>
+            </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
             <div
               className={"displayFlex justify-content-center textAlignCenter"}
@@ -119,9 +183,48 @@ const Shop = () => {
                 id={"searchShop"}
                 className={"w-full inputCustom"}
                 style={{ height: "60px" }}
+                onKeyUp={(event) => {
+                  if (event.keyCode === 13) {
+                    if (
+                      document.getElementById("searchShop").value == null ||
+                      document.getElementById("searchShop").value == "" ||
+                      document.getElementById("searchShop").value == undefined
+                    ) {
+                      Swal.fire({
+                        title: "검색 조건을 입력 해 주세요.",
+                        icon: "warning",
+                        confirmButtonText: "확인",
+                      });
+                    } else {
+                      kakaomap.current.searchShopName(
+                        document.getElementById("searchShop").value
+                      );
+                    }
+                  }
+                }}
               />
               <div style={{ marginTop: "10px" }}>
-                <FontAwesomeIcon icon={faSearch} style={{ fontSize: "50px" }} />
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  style={{ fontSize: "50px" }}
+                  onClick={() => {
+                    if (
+                      document.getElementById("searchShop").value == null ||
+                      document.getElementById("searchShop").value == "" ||
+                      document.getElementById("searchShop").value == undefined
+                    ) {
+                      Swal.fire({
+                        title: "검색 조건을 입력 해 주세요.",
+                        icon: "warning",
+                        confirmButtonText: "확인",
+                      });
+                    } else {
+                      kakaomap.current.searchShopName(
+                        document.getElementById("searchShop").value
+                      );
+                    }
+                  }}
+                />
               </div>
             </div>
             <div className={"mgt25"}></div>
@@ -132,7 +235,34 @@ const Shop = () => {
       return (
         <div>
           <div style={{ height: "124px" }}>
-            {shopOptions()}
+            <div className={"row"}>
+              <div className={"col-6"}>{shopOptions()}</div>
+              <div className={"col-6 textAlignRight"}>
+                <FontAwesomeIcon
+                  id={"refreshBtn"}
+                  style={{ fontSize: "30px", marginTop: "2px" }}
+                  icon={faRefresh}
+                  onMouseOver={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "pointer";
+                  }}
+                  onMouseLeave={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "default";
+                  }}
+                  onClick={() => {
+                    setAll(true);
+                    setDelivery(false);
+                    setKingOrder(false);
+                    setTwentyFourHours(false);
+                    setMorningMenu(false);
+                    setParking(false);
+                    setDrive(false);
+                    kakaomap.current.clickRefresh();
+                  }}
+                />
+              </div>
+            </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
             <div
               className={"displayFlex justify-content-center textAlignCenter"}
@@ -438,7 +568,7 @@ const Shop = () => {
       {/*메인 화면 구성 - START*/}
       <div className={"row w-full"}>
         <div className={"col-9 mg0 gx-3"}>
-          <KakaoMap ref={kakaomap} mapHeight={mapHeight}/>
+          <KakaoMap ref={kakaomap} mapHeight={mapHeight} />
         </div>
         <div className={"col-3 gx-0"} style={{ paddingLeft: "7px" }}>
           <Nav

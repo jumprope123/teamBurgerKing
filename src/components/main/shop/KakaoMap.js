@@ -12,11 +12,132 @@ const { kakao } = window;
 
 const KakaoMap = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
+    clickRefresh() {
+      setKakaoMap(37.57253458172258, 126.98050426601237);
+    },
     clickThisPosition(position) {
       setKakaoMap(
         position["coords"]["latitude"],
         position["coords"]["longitude"]
       );
+    },
+    searchShopName(shopName) {
+      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+        mapOption = {
+          center: new kakao.maps.LatLng(37.57253458172258, 126.98050426601237), // 지도의 중심좌표 (버거킹 종로구청점)
+          level: 5, // 지도의 확대 레벨
+        };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+      setMap(map);
+      // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
+      var markers = [];
+      var markersAll = [];
+
+      // 장소 검색 객체를 생성합니다
+      var ps = new kakao.maps.services.Places();
+      let place = shopName + " " + "버거킹";
+      ps.keywordSearch(place, placesSearchCB);
+
+      function placesSearchCB(data, status, pagination) {
+        if (status === kakao.maps.services.Status.OK) {
+          // 이동할 위도 경도 위치를 생성합니다
+          var moveLatLon = new kakao.maps.LatLng(data[0]["y"], data[0]["x"]);
+
+          // 지도 중심을 이동 시킵니다
+          map.setCenter(moveLatLon);
+
+          makeMarker(data);
+          setMarkers(map);
+          dispatch(changeMapSearchData(data));
+        }
+      }
+
+      function makeMarker(positions) {
+        dispatch(changeMapSearchData(positions));
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc = "/image/main/shop/maker.png";
+        markers = [];
+        for (var i = 0; i < positions.length; i++) {
+          // 마커 이미지의 이미지 크기 입니다
+          var imageSize = new kakao.maps.Size(100, 100);
+
+          // 마커 이미지를 생성합니다
+          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+          // 마커를 생성합니다
+          var marker = new kakao.maps.Marker({
+            // map: map, // 마커를 표시할 지도
+            position: new kakao.maps.LatLng(
+              positions[i]["y"],
+              positions[i]["x"]
+            ), // 마커를 표시할 위치
+            title: positions[i]["place_name"], // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            image: markerImage, // 마커 이미지
+          });
+          markers.push(marker);
+
+          let dupeMarker = false;
+          for (let i = 0; i < markersAll.length; i++) {
+            if (markersAll[i]["Gb"] == marker["Gb"]) {
+              dupeMarker = true;
+              break;
+            }
+          }
+          if (dupeMarker == false) {
+            markersAll.push(marker);
+          }
+
+          // 마커에 클릭이벤트를 등록합니다
+          let x = positions[i]["x"];
+          let y = positions[i]["y"];
+          let clickedMarker = positions[i];
+          kakao.maps.event.addListener(marker, "click", function () {
+            // 이동할 위도 경도 위치를 생성합니다
+            var moveLatLon = new kakao.maps.LatLng(y, x);
+
+            // 지도 중심을 이동 시킵니다
+            map.panTo(moveLatLon);
+            // 커스텀 오버레이에 표시할 컨텐츠 입니다
+            var content =
+              '<div class="customoverlay">' +
+              '    <span class="title">' +
+              clickedMarker["place_name"] +
+              "</span>" +
+              "</div>";
+
+            // 마커 위에 커스텀오버레이를 표시합니다
+            // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+            var overlay = new kakao.maps.CustomOverlay({
+              content: content,
+              position: new kakao.maps.LatLng(y, x), // 마커를 표시할 위치
+            });
+            if (overlayMarkers != "") {
+              overlayMarkers.setMap(null);
+            }
+            overlay.setMap(map);
+            overlayMarkers = overlay;
+          });
+        }
+      }
+
+      // 배열에 추가된 마커들을 지도에 표시하는 함수입니다
+      function setMarkers(map) {
+        for (var i = 0; i < markersAll.length; i++) {
+          let checkDupe = false;
+          for (var j = 0; j < markers.length; j++) {
+            if (markersAll[i]["Gb"] == markers[j]["Gb"]) {
+              checkDupe = true;
+              break;
+            }
+          }
+          if (checkDupe == false) {
+            markersAll[i].setMap(null);
+          } else {
+            markersAll[i].setMap(map);
+          }
+        }
+      }
     },
   }));
   /**
@@ -39,7 +160,7 @@ const KakaoMap = forwardRef((props, ref) => {
       };
 
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
+    setMap(map);
     // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
     var markers = [];
     var markersAll = [];
