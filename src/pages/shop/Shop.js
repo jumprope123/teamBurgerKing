@@ -10,6 +10,7 @@ import {
   faCircleChevronDown,
   faCircleChevronUp,
   faLocationCrosshairs,
+  faRefresh,
   faSearch,
   faSquareCheck,
   faXmark,
@@ -49,6 +50,13 @@ const Shop = () => {
     dispatch(changeStateFooter(false));
     setFaCircleChevronValue("up");
     setValue(0);
+    setAll(true);
+    setDelivery(false);
+    setKingOrder(false);
+    setTwentyFourHours(false);
+    setMorningMenu(false);
+    setParking(false);
+    setDrive(false);
   }, []);
 
   useEffect(() => {
@@ -84,7 +92,34 @@ const Shop = () => {
       return (
         <div>
           <div style={{ height: "124px" }}>
-            {shopOptions()}
+            <div className={"row"}>
+              <div className={"col-6"}>{shopOptions()}</div>
+              <div className={"col-6 textAlignRight"}>
+                <FontAwesomeIcon
+                  id={"refreshBtn"}
+                  style={{ fontSize: "30px", marginTop: "2px" }}
+                  icon={faRefresh}
+                  onMouseOver={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "pointer";
+                  }}
+                  onMouseLeave={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "default";
+                  }}
+                  onClick={() => {
+                    setAll(true);
+                    setDelivery(false);
+                    setKingOrder(false);
+                    setTwentyFourHours(false);
+                    setMorningMenu(false);
+                    setParking(false);
+                    setDrive(false);
+                    kakaomap.current.clickRefresh();
+                  }}
+                />
+              </div>
+            </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
             <button
               className={"w-full fontBM_MenuName background_white"}
@@ -112,7 +147,34 @@ const Shop = () => {
       return (
         <div>
           <div style={{ height: "124px" }}>
-            {shopOptions()}
+            <div className={"row"}>
+              <div className={"col-6"}>{shopOptions()}</div>
+              <div className={"col-6 textAlignRight"}>
+                <FontAwesomeIcon
+                  id={"refreshBtn"}
+                  style={{ fontSize: "30px", marginTop: "2px" }}
+                  icon={faRefresh}
+                  onMouseOver={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "pointer";
+                  }}
+                  onMouseLeave={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "default";
+                  }}
+                  onClick={() => {
+                    setAll(true);
+                    setDelivery(false);
+                    setKingOrder(false);
+                    setTwentyFourHours(false);
+                    setMorningMenu(false);
+                    setParking(false);
+                    setDrive(false);
+                    kakaomap.current.clickRefresh();
+                  }}
+                />
+              </div>
+            </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
             <div
               className={"displayFlex justify-content-center textAlignCenter"}
@@ -173,7 +235,34 @@ const Shop = () => {
       return (
         <div>
           <div style={{ height: "124px" }}>
-            {shopOptions()}
+            <div className={"row"}>
+              <div className={"col-6"}>{shopOptions()}</div>
+              <div className={"col-6 textAlignRight"}>
+                <FontAwesomeIcon
+                  id={"refreshBtn"}
+                  style={{ fontSize: "30px", marginTop: "2px" }}
+                  icon={faRefresh}
+                  onMouseOver={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "pointer";
+                  }}
+                  onMouseLeave={() => {
+                    window.document.getElementById("refreshBtn").style.cursor =
+                      "default";
+                  }}
+                  onClick={() => {
+                    setAll(true);
+                    setDelivery(false);
+                    setKingOrder(false);
+                    setTwentyFourHours(false);
+                    setMorningMenu(false);
+                    setParking(false);
+                    setDrive(false);
+                    kakaomap.current.clickRefresh();
+                  }}
+                />
+              </div>
+            </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
             <div
               className={"displayFlex justify-content-center textAlignCenter"}

@@ -320,6 +320,10 @@ w-full{
     text-align: left;
 }
 
+.textAlignRight{
+    text-align: right;
+}
+
 .alignItemsCenter{
     align-items: center;
 }

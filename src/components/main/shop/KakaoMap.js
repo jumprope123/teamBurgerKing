@@ -12,6 +12,9 @@ const { kakao } = window;
 
 const KakaoMap = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
+    clickRefresh() {
+      setKakaoMap(37.57253458172258, 126.98050426601237);
+    },
     clickThisPosition(position) {
       setKakaoMap(
         position["coords"]["latitude"],
