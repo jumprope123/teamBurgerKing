@@ -37,6 +37,7 @@ const SiGunGu = (props) => {
   }
 
   function handelSelectGuGun(event) {
+    setGuGun(event.target.value);
     let address = si + " " + event.target.value;
     props.changeSiGunGu(address);
   }

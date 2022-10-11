@@ -87,7 +87,7 @@ const Shop = () => {
   };
   const [shopNavHeight, setShopNavHeight] = useState(46);
 
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(0);
 
   function TabContent() {
     if (value === 0) {
@@ -110,6 +110,7 @@ const Shop = () => {
                       "default";
                   }}
                   onClick={() => {
+                    window.document.getElementById("nav0").click();
                     setAll(true);
                     setDelivery(false);
                     setKingOrder(false);
@@ -165,6 +166,7 @@ const Shop = () => {
                       "default";
                   }}
                   onClick={() => {
+                    window.document.getElementById("nav0").click();
                     setAll(true);
                     setDelivery(false);
                     setKingOrder(false);
@@ -253,6 +255,7 @@ const Shop = () => {
                       "default";
                   }}
                   onClick={() => {
+                    window.document.getElementById("nav0").click();
                     setAll(true);
                     setDelivery(false);
                     setKingOrder(false);
@@ -571,6 +574,7 @@ const Shop = () => {
           >
             <Nav.Item>
               <Nav.Link
+                id={"nav0"}
                 eventKey="link-0"
                 onClick={() => {
                   setValue(0);
@@ -587,6 +591,7 @@ const Shop = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
+                id={"nav1"}
                 eventKey="link-1"
                 onClick={() => {
                   setValue(1);
@@ -603,6 +608,7 @@ const Shop = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
+                id={"nav2"}
                 eventKey="link-2"
                 onClick={() => {
                   setValue(2);
