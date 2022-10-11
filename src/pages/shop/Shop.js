@@ -21,6 +21,8 @@ import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import TabContentDetail from "../../components/main/shop/TabContentDetail";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import axios, { Axios } from "axios";
+import SiGunGu from "../../components/main/shop/SiGunGu";
 
 const Shop = () => {
   const kakaomap = useRef();
@@ -264,23 +266,7 @@ const Shop = () => {
               </div>
             </div>
             <div style={{ borderTop: "1px solid #F2F2F2" }}></div>
-            <div
-              className={"displayFlex justify-content-center textAlignCenter"}
-            >
-              <select
-                className={"w-full inputCustom mgr10 fontBM_menuDetail"}
-                style={{ height: "60px" }}
-              >
-                <option>특별/광역시</option>
-                <option>서울</option>
-              </select>
-              <select
-                className={"w-full inputCustom mgl10 fontBM_menuDetail"}
-                style={{ height: "60px" }}
-              >
-                <option>군,구</option>
-              </select>
-            </div>
+            <SiGunGu changeSiGunGu={changeSiGunGu} />
             <div className={"mgt25"}></div>
           </div>
         </div>
@@ -560,6 +546,10 @@ const Shop = () => {
          */}
       </div>
     );
+  }
+
+  function changeSiGunGu(data) {
+    kakaomap.current.searchShopName(data);
   }
 
   return (
