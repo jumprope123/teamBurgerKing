@@ -18,6 +18,7 @@ import AllDayKing from "./pages/menu/AllDayKing";
 import SideMenu from "./pages/menu/SideMenu";
 import BeverageDessert from "./pages/menu/BeverageDessert";
 import ShowDetail from "./pages/menu/ShowDetail";
+import Home from "./pages/home/Home";
 const App = () => {
   /**
    *리덕스에서 state를 가지고 와서 보여주는 변수
@@ -50,6 +51,9 @@ const App = () => {
       <BrowserRouter>
         {useDefaultHeader == true ? <Header /> : <></>}
         <Routes>
+          {/*Home*/}
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Home" element={<Home />}></Route>
           {/*메뉴소개 - 스페셜&할인팩, 신제품(NEW), 프리미엄, 와퍼&주니어, 치킨&슈림프버거, 올데이킹, 사이드, 음료&디저트*/}
           <Route path="/SpecialDiscount" element={<SpecialDiscount />}></Route>
           <Route path="/NewProducts" element={<NewProducts />}></Route>

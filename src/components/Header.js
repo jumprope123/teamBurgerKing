@@ -21,10 +21,12 @@ const Header = () => {
         <div className={"col-8"}>
           <div className={"row mg0 min-w910"}>
             <div className={"col-2"}>
-              <img
-                src="/image/header/logo.png"
-                style={{ width: "90px", height: "100px" }}
-              />
+              <Link to={"/home"}>
+                <img
+                  src="/image/header/logo.png"
+                  style={{ width: "90px", height: "100px" }}
+                />
+              </Link>
             </div>
             <div
               className={"col-2 pt40 min-w150"}
