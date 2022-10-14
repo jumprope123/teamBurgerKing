@@ -476,11 +476,13 @@ const Shop = () => {
             className="justify-content-center fontBM_MenuName"
             variant="tabs"
             defaultActiveKey="link-0"
+            style={{ border: "none" }}
           >
             <Nav.Item>
               <Nav.Link
                 id={"nav0"}
                 eventKey="link-0"
+                style={{ border: "none" }}
                 onClick={() => {
                   setValue(0);
                 }}
@@ -498,6 +500,7 @@ const Shop = () => {
               <Nav.Link
                 id={"nav1"}
                 eventKey="link-1"
+                style={{ border: "none" }}
                 onClick={() => {
                   setValue(1);
                 }}
@@ -515,6 +518,7 @@ const Shop = () => {
               <Nav.Link
                 id={"nav2"}
                 eventKey="link-2"
+                style={{ border: "none" }}
                 onClick={() => {
                   setValue(2);
                 }}
