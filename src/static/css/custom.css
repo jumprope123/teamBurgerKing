@@ -42,6 +42,18 @@
     font-size: 35px;
 }
 
+.fontBM_Home{
+    font-family: BMJUA;
+    font-weight: bold;
+    font-size: 55px;
+}
+
+.fontBM_Home_noBold{
+    font-family: BMJUA;
+    font-size: 35px;
+}
+
+
 .fontBM_MenuNavBar_small{
     font-family: BMJUA;
     font-size: 18px;
@@ -141,6 +153,10 @@
 .modalInnerDiv{
     width: 660px;
     height: 480px;
+}
+
+.background_home{
+    background-color: #F2EBE6;
 }
 
 .background_white{
@@ -330,6 +346,10 @@ w-full{
 
 .height400{
     height: 400px;
+}
+
+.height480{
+    height: 480px;
 }
 
 .height88{

@@ -24,7 +24,7 @@ const Premium = () => {
    * value값이 false선언시 클릭불가능한 text로 나타난다.
    */
   const [widthNavBarData, setWidthNavBarData] = useState({
-    HOME: "home",
+    HOME: "/home",
     메뉴소개: false,
   });
 
