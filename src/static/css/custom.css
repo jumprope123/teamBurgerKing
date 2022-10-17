@@ -53,6 +53,11 @@
     font-size: 35px;
 }
 
+.fontBM_Event_noBold{
+    font-family: BMJUA;
+    font-size: 30px;
+}
+
 
 .fontBM_MenuNavBar_small{
     font-family: BMJUA;
@@ -161,6 +166,10 @@
 
 .background_white{
     background-color: white;
+}
+
+.background_brown{
+    background-color: #512314;
 }
 
 .background_red{
@@ -366,6 +375,17 @@ w-full{
 
 .borderRadius15{
     border-radius: 15px;
+}
+
+.border2pxSolidBlack{
+    border: 2px solid black !important;
+    border-bottom: none !important;
+}
+
+.border2pxSolidBlackBottom{
+    border: none !important;
+    border-bottom: 2px solid black !important;
+
 }
 
 .colorRed{
