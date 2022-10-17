@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Brand from "./pages/Brand";
 import Shop from "./pages/shop/Shop";
+import Event from "./pages/Event/Event";
 import Center from "./pages/Center";
 import NotFound from "./components/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -47,7 +48,7 @@ const App = () => {
     setUseDefaultFooter(reduxState.useDefaultFooter);
   });
   return (
-    <div className="App">
+    <div className="App" style={{ minWidth: "1700px" }}>
       <BrowserRouter>
         {useDefaultHeader == true ? <Header /> : <></>}
         <Routes>
@@ -71,6 +72,7 @@ const App = () => {
           ></Route>
 
           <Route path="/Shop" element={<Shop />}></Route>
+          <Route path="/Event" element={<Event />}></Route>
           <Route path="/Brand" element={<Brand />}></Route>
           <Route path="/Center" element={<Center />}></Route>
           {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}
