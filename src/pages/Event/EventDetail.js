@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { changeStateFooter, changeStateHeader } from "../../store/Store";
 import WidthNavBar from "../../components/main/menu/WidthNavBar";
-import EventNavBar from "../../components/main/Event/EventNavBar";
-import EventNavBarOnlyTitle from "../../components/main/Event/EventNavBarOnlyTitle";
+import EventNavBar from "../../components/main/event/EventNavBar";
+import EventNavBarOnlyTitle from "../../components/main/event/EventNavBarOnlyTitle";
 import { Nav } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,8 +11,6 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const EventDetail = () => {
   const location = useLocation();
-  console.log(location);
-  console.log(location.state);
 
   const [title, setTitle] = useState("");
 

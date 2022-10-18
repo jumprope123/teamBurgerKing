@@ -192,6 +192,9 @@ const Header = () => {
                 <li>
                   <Link
                     to="/Brand"
+                    state={{
+                      navData: "BRAND",
+                    }}
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -201,6 +204,9 @@ const Header = () => {
                 <li>
                   <Link
                     to="/Brand"
+                    state={{
+                      navData: "WHOPPER",
+                    }}
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
@@ -210,6 +216,9 @@ const Header = () => {
                 <li>
                   <Link
                     to="/Brand"
+                    state={{
+                      navData: "COMM",
+                    }}
                     className={"textDecorationNone colorBlack"}
                     onClick={CloseDiv}
                   >
