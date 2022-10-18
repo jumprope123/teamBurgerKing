@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { current } from "@reduxjs/toolkit";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Brand from "./pages/Brand";
+import Brand from "./pages/brand/Brand";
 import Shop from "./pages/shop/Shop";
 import Event from "./pages/Event/Event";
 import EventDetail from "./pages/Event/EventDetail";

@@ -109,6 +109,9 @@ const Footer = () => {
                 <li className={"mgb5"}>
                   <Link
                     to="/BRAND"
+                    state={{
+                      navData: "BRAND",
+                    }}
                     className={"textDecorationNone color_footer"}
                   >
                     BRAND
@@ -117,6 +120,9 @@ const Footer = () => {
                 <li className={"mgb5"}>
                   <Link
                     to="/BRAND"
+                    state={{
+                      navData: "WHOPPER",
+                    }}
                     className={"textDecorationNone color_footer"}
                   >
                     WHOPPER
@@ -125,6 +131,9 @@ const Footer = () => {
                 <li className={"mgb5"}>
                   <Link
                     to="/BRAND"
+                    state={{
+                      navData: "COMM",
+                    }}
                     className={"textDecorationNone color_footer"}
                   >
                     COMM.
