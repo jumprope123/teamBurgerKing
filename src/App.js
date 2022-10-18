@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Brand from "./pages/Brand";
 import Shop from "./pages/shop/Shop";
 import Event from "./pages/Event/Event";
+import EventDetail from "./pages/Event/EventDetail";
 import Center from "./pages/Center";
 import NotFound from "./components/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -55,7 +56,7 @@ const App = () => {
           {/*Home*/}
           <Route path="/" element={<Home />}></Route>
           <Route path="/Home" element={<Home />}></Route>
-          {/*메뉴소개 - 스페셜&할인팩, 신제품(NEW), 프리미엄, 와퍼&주니어, 치킨&슈림프버거, 올데이킹, 사이드, 음료&디저트*/}
+          {/*메뉴소개 - 스페셜&할인팩, 신제품(NEW), 프리미엄, 와퍼&주니어, 치킨&슈림프버거, 올데이킹, 사이드, 음료&디저트 - START*/}
           <Route path="/SpecialDiscount" element={<SpecialDiscount />}></Route>
           <Route path="/NewProducts" element={<NewProducts />}></Route>
           <Route path="/Premium" element={<Premium />}></Route>
@@ -64,7 +65,7 @@ const App = () => {
           <Route path="/AllDayKing" element={<AllDayKing />}></Route>
           <Route path="/SideMenu" element={<SideMenu />}></Route>
           <Route path="/BeverageDessert" element={<BeverageDessert />}></Route>
-          {/* 메뉴소개 각각의 페이지, 우선 ShowDetail */}
+          {/*메뉴소개 - 스페셜&할인팩, 신제품(NEW), 프리미엄, 와퍼&주니어, 치킨&슈림프버거, 올데이킹, 사이드, 음료&디저트 - END*/}
           <Route
             key="ShowDetail"
             path="/ShowDetail"
@@ -72,7 +73,10 @@ const App = () => {
           ></Route>
 
           <Route path="/Shop" element={<Shop />}></Route>
+          {/* 이벤트 페이지 - START*/}
           <Route path="/Event" element={<Event />}></Route>
+          <Route path="/EventDetail" element={<EventDetail />}></Route>
+          {/* 이벤트 페이지 - END*/}
           <Route path="/Brand" element={<Brand />}></Route>
           <Route path="/Center" element={<Center />}></Route>
           {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}

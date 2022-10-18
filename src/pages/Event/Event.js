@@ -339,7 +339,15 @@ const Shop = () => {
                   }
                 >
                   <div>
-                    <Link to="/eventDetail" className={"textDecorationNone"}>
+                    <Link
+                      to="/EventDetail"
+                      state={{
+                        widthNavBarData: widthNavBarData,
+                        item: item,
+                        value: value,
+                      }}
+                      className={"textDecorationNone"}
+                    >
                       <img src={item.url} />
                     </Link>
                   </div>
@@ -372,7 +380,12 @@ const Shop = () => {
                     >
                       <div>
                         <Link
-                          to="/eventDetail"
+                          to="/EventDetail"
+                          state={{
+                            widthNavBarData: widthNavBarData,
+                            item: item,
+                            value: value,
+                          }}
                           className={"textDecorationNone"}
                         >
                           <img src={item.url} />
@@ -416,6 +429,21 @@ const Shop = () => {
       );
     }
   }, [value, mainData]);
+
+  useEffect(() => {
+    if (value === 0) {
+      setWidthNavBarData({
+        HOME: "/Home",
+        이벤트: "/Event",
+        전체: false,
+      });
+    } else if (value === 1) {
+      setWidthNavBarData({
+        HOME: "/Home",
+        신규매장: false,
+      });
+    }
+  }, [value]);
 
   return (
     <React.Fragment>
