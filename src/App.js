@@ -49,7 +49,7 @@ const App = () => {
     setUseDefaultFooter(reduxState.useDefaultFooter);
   });
   return (
-    <div className="App" style={{ minWidth: "1700px" }}>
+    <div className="App">
       <BrowserRouter>
         {useDefaultHeader == true ? <Header /> : <></>}
         <Routes>
