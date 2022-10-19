@@ -21,6 +21,7 @@ import SideMenu from "./pages/menu/SideMenu";
 import BeverageDessert from "./pages/menu/BeverageDessert";
 import ShowDetail from "./pages/menu/ShowDetail";
 import Home from "./pages/home/Home";
+import Comm from "./pages/brand/Comm";
 const App = () => {
   /**
    *리덕스에서 state를 가지고 와서 보여주는 변수
@@ -49,7 +50,7 @@ const App = () => {
     setUseDefaultFooter(reduxState.useDefaultFooter);
   });
   return (
-    <div className="App">
+    <div className="App" style={{ minWidth: "1810px" }}>
       <BrowserRouter>
         {useDefaultHeader == true ? <Header /> : <></>}
         <Routes>
@@ -78,6 +79,7 @@ const App = () => {
           <Route path="/EventDetail" element={<EventDetail />}></Route>
           {/* 이벤트 페이지 - END*/}
           <Route path="/Brand" element={<Brand />}></Route>
+          <Route path="/Comm" element={<Comm />}></Route>
           <Route path="/Center" element={<Center />}></Route>
           {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}
           <Route path="*" element={<NotFound />}></Route>

@@ -78,7 +78,7 @@ const Header = () => {
       <div
         className={"row background_white w-full fontBM_NavBar gx-0"}
         hidden={!extendsDiv}
-        style={{ position: "absolute", zIndex: "9" }}
+        style={{ position: "absolute", zIndex: "9", minWidth: "1810px" }}
         onMouseLeave={CloseDiv}
       >
         <div className={"col-2"}></div>
@@ -215,7 +215,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/Brand"
+                    to="/Comm"
                     state={{
                       navData: "COMM",
                     }}

@@ -130,7 +130,7 @@ const Footer = () => {
                 </li>
                 <li className={"mgb5"}>
                   <Link
-                    to="/BRAND"
+                    to="/Comm"
                     state={{
                       navData: "COMM",
                     }}

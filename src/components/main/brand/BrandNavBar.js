@@ -70,28 +70,30 @@ const BrandNavBar = (props) => {
                   </span>
                 </div>
                 <div className={"mgl25 mgt30"}>
-                  <span
-                    id={"COMM"}
-                    className={
-                      currenPage == "COMM"
-                        ? "color_MenuNavBarActivate"
-                        : "textDecorationNone color_MenuNavBar"
-                    }
-                    onClick={() => {
-                      setCurrenPage("COMM");
-                      props.getChangedBrandNavBar("COMM");
-                    }}
-                    onMouseOver={() => {
-                      window.document.getElementById("COMM").style.cursor =
-                        "pointer";
-                    }}
-                    onMouseLeave={() => {
-                      window.document.getElementById("COMM").style.cursor =
-                        "default";
-                    }}
-                  >
-                    COMM.
-                  </span>
+                  <Link to={"/Comm"}>
+                    <span
+                      id={"COMM"}
+                      className={
+                        currenPage == "COMM"
+                          ? "color_MenuNavBarActivate"
+                          : "textDecorationNone color_MenuNavBar"
+                      }
+                      onClick={() => {
+                        setCurrenPage("COMM");
+                        props.getChangedBrandNavBar("COMM");
+                      }}
+                      onMouseOver={() => {
+                        window.document.getElementById("COMM").style.cursor =
+                          "pointer";
+                      }}
+                      onMouseLeave={() => {
+                        window.document.getElementById("COMM").style.cursor =
+                          "default";
+                      }}
+                    >
+                      COMM.
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>

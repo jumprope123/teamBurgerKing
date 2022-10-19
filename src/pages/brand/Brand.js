@@ -19,7 +19,6 @@ const Brand = () => {
         navData: "BRAND",
       };
     }
-    console.log(location.state.navData);
     if (location.state.navData == "BRAND") {
       setBrandNavBarData("BRAND");
       setWidthNavBarData({
