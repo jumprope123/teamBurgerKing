@@ -405,6 +405,7 @@ const Shop = () => {
                       }
                       style={{ width: "100%", height: "70px" }}
                       disabled={!onMore}
+                      hidden={!onMore}
                       onClick={() => {
                         if (!!onMore) onMore();
                       }}

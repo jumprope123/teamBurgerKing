@@ -70,7 +70,10 @@ const BrandNavBar = (props) => {
                   </span>
                 </div>
                 <div className={"mgl25 mgt30"}>
-                  <Link to={"/Comm"}>
+                  <Link
+                    to={"/Comm"}
+                    className={"textDecorationNone colorBlack"}
+                  >
                     <span
                       id={"COMM"}
                       className={
