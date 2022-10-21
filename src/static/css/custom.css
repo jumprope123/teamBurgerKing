@@ -378,6 +378,10 @@ w-full{
     overflow-y: auto;
 }
 
+.px8solidred{
+    border: 5px solid red;
+}
+
 .borderRadius15{
     border-radius: 15px;
 }
