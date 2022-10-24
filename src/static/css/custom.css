@@ -405,6 +405,10 @@ w-full{
     color: #C0C0C0;
 }
 
+.colorBrown{
+    color: brown;
+}
+
 .inputCustom{
     border: none;
     border-bottom: 1px solid black;

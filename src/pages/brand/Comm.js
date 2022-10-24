@@ -41,6 +41,19 @@ const Comm = () => {
 
   useEffect(() => {}, [clickedItem]);
 
+  const [newProducts, setNewProducts] = useState([
+    {
+      title: "골든치즈렐라 와퍼",
+      src: "/image/main/menu/newProducts/goldencheeselellaWhopper.png",
+      desc: "황금빛 치즈가 통째로! 깊은 풍미의 더블 치즈 패티와 불에 직접 구운 100% 순쇠고기패티 그리고 디아블로 소스의 조화 골든치즈렐라 와퍼!",
+    },
+    {
+      title: "골든치즈렐라 치킨버거",
+      src: "/image/main/menu/newProducts/goldencheeselellaChicken.png",
+      desc: "황금빛 치즈가 통째로! 더블 치즈 패티와 고소한 브리오슈번과 매콤한 할라피뇨 그리고 바삭한 치킨 패티에 달콤한 불고기 소스의 조화 골든치즈렐라 치킨버거!",
+    },
+  ]);
+
   const [data2014, setData2014] = useState([
     {
       title: "와우스낵",
@@ -1256,11 +1269,45 @@ const Comm = () => {
         </>
       );
     } else if (commValue === 1) {
-      return <></>;
+      return (
+        <>
+          <div className={"displayFlex justify-content-center mgt50"}>
+            <img src="/image/main/brand/awards.png" />
+          </div>
+        </>
+      );
     } else if (commValue === 2) {
-      return <></>;
+      return (
+        <>
+          <div className={"row gx-5 mgt50"}>
+            {newProducts.map((item) => {
+              return (
+                <div className={"col-3 textAlignCenter alignItemsCenter"}>
+                  <div className={"row gx-0"}>
+                    <img src={item.src} />
+                  </div>
+                  <div className={"row gx-0 fontBM_header mgt10"}>
+                    <p>{item.title}</p>
+                  </div>
+                  <div
+                    className={"row gx-0 fontBM_MenuNavBar_small colorBrown"}
+                  >
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      );
     } else if (commValue === 3) {
-      return <></>;
+      return (
+        <>
+          <div className={"displayFlex justify-content-center mgt50"}>
+            <img src="/image/main/brand/ESG.png" />
+          </div>
+        </>
+      );
     }
   };
 
