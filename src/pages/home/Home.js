@@ -4,6 +4,7 @@ import { changeStateFooter, changeStateHeader } from "../../store/Store";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Home = () => {
   /**
@@ -32,51 +33,45 @@ const Home = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     dispatch(changeStateHeader(true));
     dispatch(changeStateFooter(true));
-    setCarouselItems(makeCarouselData());
+    makeCarouselData();
   }, []);
 
-  function makeCarouselData() {
-    let rawData = [
-      {
-        title: "image_1",
-        imageUrl: "/image/main/home/home_1.png",
-      },
-      {
-        title: "image_2",
-        imageUrl: "/image/main/home/home_2.png",
-      },
-      {
-        title: "image_3",
-        imageUrl: "/image/main/home/home_3.png",
-      },
-      {
-        title: "image_4",
-        imageUrl: "/image/main/home/home_4.png",
-      },
-      {
-        title: "image_5",
-        imageUrl: "/image/main/home/home_5.png",
-      },
-    ];
-    let data = [];
-    for (let i = 0; i < rawData.length; i++) {
-      data.push(
-        <Paper>
-          <div
-            className={
-              "row fontBM_MenuName min-w910 background_menuDetail_anotherMenu"
+   function makeCarouselData() {
+    let Postdata = {}
+    let url =process.env.REACT_APP_SERVICE_API + "fo/home/home.ajax"
+     axios.post(url,Postdata)
+        .then((res)=>{
+          let result = res.data['homeList'];
+          let rawData = [];
+          result.map((item)=>{
+            let data = {
+              title: "image"+item['HOME_SEQ'],
+              imageUrl: item['HOME_IMAGE'],
             }
-          >
-            <img
-              title={rawData[i].title}
-              src={rawData[i].imageUrl}
-              // style={{ width: "180px", height: "150px" }}
-            />
-          </div>
-        </Paper>
-      );
-    }
-    return data;
+            rawData.push(data)
+          })
+          let data = [];
+          for (let i = 0; i < rawData.length; i++) {
+            data.push(
+                <Paper>
+                  <div
+                      className={
+                        "row fontBM_MenuName min-w910 background_menuDetail_anotherMenu"
+                      }
+                  >
+                    <img
+                        title={rawData[i].title}
+                        src={rawData[i].imageUrl}
+                        // style={{ width: "180px", height: "150px" }}
+                    />
+                  </div>
+                </Paper>
+            );
+          }
+            setCarouselItems(data);
+          })
+        .catch((error)=>console.log(error))
+
   }
 
   return (
